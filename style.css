@@ -6,7 +6,7 @@
 }
 
 nav{    
-    background-color: rgb(27, 27, 27);
+    background-color: rgb(55, 0, 60);
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -20,7 +20,7 @@ a{
 }
 
 #logo{
-    background-color: rgb(2, 2, 2);
+    background-color: rgb(253, 253, 253);
     border-radius: 50%;
 }
 #logo:hover{
