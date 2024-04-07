@@ -19,7 +19,7 @@ body {
     margin: 0 auto;
 }
 .header{
-    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(pl_fondo_vip.png);
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(fondo_limpiopl.png);
     background-position: center bottom ;
     background-repeat: no-repeat;
     background-size: cover;
@@ -85,16 +85,16 @@ body {
 .btn-1{
     display: inline-block;
     padding: 11px 35px;
-    background-color: rgb(0, 0, 0);
-    color: yellow;
+    background-color: rgb(61, 24, 93);
+    color: rgb(255, 255, 255);
     text-transform: uppercase;
 }
 .btn-1:hover{
-    background-color: rgb(183, 130, 19);
+    background-color: rgb(150, 60, 255);
 }
 .viip{
     padding: 100px;
-    background-color: rgb(172, 124, 7);
+    background-color:rgb(55, 0, 60);
     position: relative;
 }
 .viip-content{
@@ -169,19 +169,7 @@ body {
     justify-content: space-between;
     margin-bottom: 50px;
 }
-.services-1{
-    padding: 0 100px;
-}
-.services-1 img{
-    width: 200px;
-    margin-bottom: 15px;
-}
 
-.services-1 h3{
-    color: rgb(0, 0, 0);
-    font-size: 18px;
-
-}
 
 .general{
     display: flex;
@@ -189,10 +177,10 @@ body {
 .general-1{
     width: 50%;
     padding: 100px 250px 100px 100px;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(55, 0, 60);
 }
 .general-2{
-    background-image: url(tour_oldtraford.png);
+    background-image: url(haaland_cam.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -200,19 +188,27 @@ body {
 }
 
 .general-3{
-    background-image: url(emirates.png);
+    background-image: url(salah_zap.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     width: 50%;
 }
 .general-4{
-    background-image: url(brightonstadium.png);
+    background-image: url(copa_pl.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     width: 50%;
 }
+.general-5{
+    background-image: url(brereton.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+}
+
 h2{
     font-size: 55px;
     line-height: 70px;
@@ -235,15 +231,15 @@ p{
 }
 .blog p{
     font-size: 16px;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     margin: 25px 0 45px 0;
 }
 
 .blog{
     padding: 100px 0;
     text-align: center;
-    color: black;
-    background-color: rgb(172, 124, 7);;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);;
 }
 .blog-1{
     padding: 15px 35px;
@@ -257,25 +253,10 @@ p{
     font-size: 25px;
     color: rgb(0, 0, 0);
 }
-.fooster{
-    padding: 100px 0;
-    background-color: black;
 
-}
-.footer-content{
-    display: flex;
-    justify-content: space-between;
-    background-color: black;
-}
-link h3{
-    font-size: 18px;
-    color: rgb(255, 255, 255);
-    margin-bottom: 15px;
-}
-.link a{
-    font-size: 16px;
-    color: rgb(255, 255, 255);
-    display: block;
+h5{
+    color: rgb(249, 246, 246);
+    font-size: 20px;
     margin-bottom: 15px;
 }
 
