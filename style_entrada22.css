@@ -1,6 +1,4 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
-
 
 *{
     font-family: "Odibee Sans", sans-serif;
@@ -33,7 +31,6 @@ a{
 }
 #logo > img{
     height: 8vh;
-    width: 5vh;
 }
 
 @keyframes desplazar {
@@ -94,17 +91,12 @@ img{
 }
 
 
-
-
-
-
 /* Main */
-
-/*.container-items{
+.container-items{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-}*/
+}
 
 .item{
     border-radius: 10px;
