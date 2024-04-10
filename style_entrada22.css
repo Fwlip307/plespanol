@@ -93,9 +93,13 @@ img{
 
 /* Main */
 .container-items{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(pl_fondo_vip.png);
+    background-position: center bottom ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
 }
 
 .item{
