@@ -34,6 +34,16 @@ a{
     height: 8vh;
 }
 
+.carro{
+    background-color: transparent;
+    border-radius: 50%;
+}
+.carro:hover{
+    background-color: rgb(255, 255, 255);
+    animation-duration: 50%;
+    transition-duration: 1s;
+    transform:rotate(360deg)scale(1.3)
+}
 body {
 	font-family: 'Ubuntu';
 	max-width: 1200px;
