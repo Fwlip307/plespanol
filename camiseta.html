@@ -28,7 +28,19 @@
             </a>
             <a href="tour.html">Tour Estadio</a>
             <a href="accesorio.html">Accesorios</a>
-			<div id = carro> 
+			<div id="floating-cart" style="display: none;">
+				<div class="info-product">
+					<div class="cart">
+						<h2>Carrito de Compras</h2>
+						<ul id="cart-items"></ul>
+						<p>Total: <span id="cart-total">0</span></p>
+						<button onclick="pay()">Pagar</button>
+						<button onclick="hideFloatingCart()">Atrás</button>
+					</div>
+				</div>
+			</div>
+
+			<div id="cart-icon">
 				<img src="carro.png" alt="">
 			</div>
     
@@ -50,8 +62,7 @@
 				<div class="info-product">
 					<h2>Camiseta Local Manchester United 23/24</h2>
 					<p class="price">$79.990</p>
-					<a href="infocam_manunited.html">
-						<button>Ver Producto</button>
+					<button onclick="addToCart('Camiseta Local Manchester United 23/24', 79990)">Añadir al carrito</button>
 					</a>
 				</div>
 			</div>
@@ -65,8 +76,7 @@
 				<div class="info-product">
 					<h2>Camiseta Local Manchester City 23/24</h2>
 					<p class="price">$69.990</p>
-					<a href="cam_mancity.html">
-						<button>Ver Producto</button>
+						<button onclick="addToCart('Camiseta Local Manchester City 23/24', 69990)">Añadir al carrito</button>
 					</a>
 				</div>
 			</div>
@@ -80,7 +90,7 @@
 				<div class="info-product">
 					<h2>Camiseta Local Arsenal 23/24</h2>
 					<p class="price">$64.990</p>
-					<button>Ver Producto</button>
+					<button onclick="addToCart('Camiseta Local Arsenal 23/24', 64990)">Añadir al carrito</button>
 				</div>
 			</div>
 			<div class="item">
@@ -93,7 +103,7 @@
 				<div class="info-product">
 					<h2>Camiseta Local Brighton and Hove Albion 23/24</h2>
 					<p class="price">$64.990</p>
-					<button>Ver Producto</button>
+					<button onclick="addToCart('Camiseta Local Brighton and Hove Albion 23/24', 64990)">Añadir al carrito</button>
 				</div>
 			</div>
 			<div class="item">
@@ -106,7 +116,7 @@
 				<div class="info-product">
 					<h2>Camiseta Local Newcastle United 23/24</h2>
 					<p class="price">$69.990</p>
-					<button>Ver Producto</button>
+					<button onclick="addToCart('Camiseta Local Newcastle United 23/24', 69990)">Añadir al carrito</button>
 				</div>
 			</div>
 			<div class="item">
@@ -119,7 +129,7 @@
 				<div class="info-product">
 					<h2>Camiseta Local Aston Villa 23/24</h2>
 					<p class="price">$59.990</p>
-					<button>Ver Producto</button>
+					<button onclick="addToCart('Camiseta Local Aston Villa 23/24', 59990)">Añadir al carrito</button>
 				</div>
 			</div>
 			<div class="item">
@@ -132,7 +142,7 @@
 				<div class="info-product">
 					<h2>Camiseta Local Tottenham Hotspur 23/24</h2>
 					<p class="price">$69.990</p>
-					<button>Ver Producto</button>
+					<button onclick="addToCart('Camiseta Local Tottenham Hotspur 23/24', 69990)">Añadir al carrito</button>
 				</div>
 			</div>
 			<div class="item">
@@ -145,7 +155,7 @@
 				<div class="info-product">
 					<h2>Camiseta Local Liverpool 23/24</h2>
 					<p class="price">$79.990</p>
-					<button>Ver Producto</button>
+					<button onclick="addToCart('Camiseta Local Liverpool 23/24', 79990)">Añadir al carrito</button>
 				</div>
 			</div>
 			<div class="item">
@@ -158,7 +168,7 @@
 				<div class="info-product">
 					<h2>Camiseta Local West Ham United 23/24</h2>
 					<p class="price">$69.990</p>
-					<button>Ver Producto</button>
+					<button onclick="addToCart('Camiseta Local West Ham United 23/24', 69990)">Añadir al carrito</button>
 				</div>
 			</div>
 			<div class="item">
@@ -171,7 +181,7 @@
 				<div class="info-product">
 					<h2>Camiseta Local Wolves 23/24</h2>
 					<p class="price">$49.990</p>
-					<button>Ver Producto</button>
+					<button onclick="addToCart('Camiseta Local Wolves 23/24', 49990)">Añadir al carrito</button>
 				</div>
 			</div>
 			<div class="item">
@@ -184,7 +194,7 @@
 				<div class="info-product">
 					<h2>Camiseta Local Chelsea 23/24</h2>
 					<p class="price">$64.990</p>
-					<button>Ver Producto</button>
+					<button onclick="addToCart('Camiseta Local Chelsea 23/24', 64990)">Añadir al carrito</button>
 				</div>
 			</div>
 			<div class="item">
@@ -197,7 +207,7 @@
 				<div class="info-product">
 					<h2>Camiseta Local Fulham 23/24</h2>
 					<p class="price">$54.990</p>
-					<button>Ver Producto</button>
+					<button onclick="addToCart('Camiseta Local Fulham 23/24', 54990)">Añadir al carrito</button>
 				</div>
 			</div>
 			<div class="item">
@@ -210,7 +220,7 @@
 				<div class="info-product">
 					<h2>Camiseta Local Bournemouth 23/24</h2>
 					<p class="price">$49.990</p>
-					<button>Ver Producto</button>
+					<button onclick="addToCart('Camiseta Local Bournemouth 23/24', 49990)">Añadir al carrito</button>
 				</div>
 			</div>
 			<div class="item">
@@ -223,7 +233,7 @@
 				<div class="info-product">
 					<h2>Camiseta Local Crystal Palace 23/24</h2>
 					<p class="price">$59.990</p>
-					<button>Ver Producto</button>
+					<button onclick="addToCart('Camiseta Local Crystal Palace 23/24', 59990)">Añadir al carrito</button>
 				</div>
 			</div>
 			<div class="item">
@@ -236,7 +246,7 @@
 				<div class="info-product">
 					<h2>Camiseta Local Brendford 23/24</h2>
 					<p class="price">$49.990</p>
-					<button>Ver Producto</button>
+					<button onclick="addToCart('Camiseta Local Brendford 23/24', 49990)">Añadir al carrito</button>
 				</div>
 			</div>
 			<div class="item">
@@ -249,7 +259,7 @@
 				<div class="info-product">
 					<h2>Camiseta Local Everton 23/24</h2>
 					<p class="price">$64.990</p>
-					<button>Ver Producto</button>
+					<button onclick="addToCart('Camiseta Local Everton 23/24', 64990)">Añadir al carrito</button>
 				</div>
 			</div>
 			<div class="item">
@@ -262,7 +272,7 @@
 				<div class="info-product">
 					<h2>Camiseta Local Luton Town 23/24</h2>
 					<p class="price">$54.990</p>
-					<button>Ver Producto</button>
+					<button onclick="addToCart('Camiseta Local Luton Town 23/24', 54990)">Añadir al carrito</button>
 				</div>
 			</div>
 			<div class="item">
@@ -275,7 +285,7 @@
 				<div class="info-product">
 					<h2>Camiseta Local Nottingham Forest 23/24</h2>
 					<p class="price">$49.990</p>
-					<button>Ver Producto</button>
+					<button onclick="addToCart('Camiseta Local Nottingham Forest 23/24', 49990)">Añadir al carrito</button>
 				</div>
 			</div>
 			<div class="item">
@@ -288,7 +298,7 @@
 				<div class="info-product">
 					<h2>Camiseta Local Burnley 23/24</h2>
 					<p class="price">$59.990</p>
-					<button>Ver Producto</button>
+					<button onclick="addToCart('Camiseta Local Burnley 23/24', 59990)">Añadir al carrito</button>
 				</div>
 			</div>
 			<div class="item">
@@ -301,9 +311,10 @@
 				<div class="info-product">
 					<h2>Camiseta Local Sheffield United 23/24</h2>
 					<p class="price">$54.990</p>
-					<button>Ver Producto</button>
+					<button onclick="addToCart('Camiseta Local Sheffield United 23/24', 54990)">Añadir al carrito</button>
 				</div>
 			</div>
+			<script src="camiseta.js"></script>
 
 		</div>
 	</body>

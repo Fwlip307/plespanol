@@ -10,7 +10,7 @@ nav{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 8vh;
+    height: 12vh;
 }
 
 a{
@@ -152,4 +152,17 @@ img{
     color: #fff;
     padding: 15px 10px;
     cursor: pointer;
+}
+
+
+#floating-cart {
+    position: fixed;
+    top: 0;
+    right: 0; /* Coloca el carrito flotante a la derecha */
+    width: 300px; /* Tamaño del carrito flotante */
+    height: 100%; /* O la altura que prefieras */
+    background-color: rgb(0, 0, 0); /* Color de fondo del carrito */
+    z-index: 1000; /* Asegura que el carrito esté encima del resto del contenido */
+    overflow-y: auto; /* Agrega desplazamiento vertical si el contenido es demasiado largo */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra para un aspecto flotante */
 }

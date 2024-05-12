@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    min-height: 100vh;
+    background-image: url(pl_fondo_vip.png);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenido{
+    background-color: #ffffff;
+    width: 40%;
+    padding: 30px;
+    border-radius: 30px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+}
+
+h1{
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+a{
+    color: #8a8a8a;
+    text-decoration: none;
+}
+
+input{
+    outline: none !important; 
+    box-shadow: none !important;
+}
+
+.correct{
+    border: 1px #2ac20896 solid !important;
+}
+.incorrect{
+    border: 1px #c2210891 solid !important;
+}
+
+.texto-error{
+    color: #ff0000;
+    font-size: .8rem;
+    text-align: right;
+}
