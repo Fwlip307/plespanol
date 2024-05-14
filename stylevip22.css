@@ -279,4 +279,55 @@ link h3{
     margin-bottom: 15px;
 }
 
+@media (max-width:850px) {
 
+    .general>div {
+        height: 35vh;
+        padding: 0px 20px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .btn-1 {
+        font-size: 2vw;
+    }
+
+    .general>div>h2 {
+        font-size: 3vw;
+        line-height: 1rem;
+    }
+    .viip-content h2 {
+        font-size: 38px;
+        line-height: 70px;
+        color: rgb(242, 245, 245);
+        text-transform: uppercase;
+        padding: 0;
+        margin-bottom: 15px;
+        margin-left: 10px;
+    }
+    .txt-p {
+        padding: 0 20px;
+    }
+    .viip-group {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .services-group{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+    }
+    #logo img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+}

@@ -18,20 +18,31 @@
 	<body>
 		<header>
 			<nav>
+				<a href="index2.html">
+					<div id = logo> 
+						<img src="logopl11111.png.png" alt="">
+					</div>
+				</a>
 				<a href="index2.html">Inicio</a>
             <a href="entradas.html">Entradas</a>
             <a href="camiseta.html">Camisetas</a>
-            <a href="index2.html">
-                <div id = logo> 
-                    <img src="logopl11111.png.png" alt="">
-                </div>
-            </a>
+            
             <a href="tour.html">Tour Estadio</a>
             <a href="accesorio.html">Accesorios</a>
-			<div id = carro> 
-				<img src="carro.png" alt="">
+			<div id="floating-cart" style="display: none;">
+				<div class="info-product">
+					<div class="cart">
+						<h2>Carrito de Compras</h2>
+						<ul id="cart-items"></ul>
+						<p>Total: <span id="cart-total">0</span></p>
+						<button onclick="pay()">Pagar</button>
+						<button onclick="hideFloatingCart()">Atrás</button>
+					</div>
+				</div>
 			</div>
-    
+			<div id="cart-icon">
+				<img src="icon_shop.png" alt="">
+			</div>
             </nav>
 		</header>
         <h1>Tienda de Accesorios</h1>
@@ -46,7 +57,7 @@
 			<div class="info-product">
 				<h2>Balon Premier League Temporada 23/24</h2>
 				<p class="price">$59.990</p>
-				<button>Añadir al carrito</button>
+				<button onclick="addToCart('Balon Premier League Temporada 23/24', 59990)">Añadir al carrito</button>
 
 					</a>
 				</div>
@@ -61,7 +72,7 @@
 			<div class="info-product">
 				<h2>Balon Premier League Temporada 22/23</h2>
 				<p class="price">$49.990</p>
-				<button>Añadir al carrito</button>
+				<button onclick="addToCart('Balon Premier League Temporada 22/23', 49990)">Añadir al carrito</button>
 					</a>
 				</div>
 			</div>
@@ -75,7 +86,7 @@
 				<div class="info-product">
 					<h2>Balon Premier League Temporada 21/22</h2>
 					<p class="price">$29.990</p>
-					<button>Ver Producto</button>
+					<button onclick="addToCart('Balon Premier League Temporada 21/22', 29990)">Añadir al carrito</button>
 				</div>
 			</div>
 			<div class="item">
@@ -88,7 +99,7 @@
 				<div class="info-product">
 					<h2>Bolso de Aston villa</h2>
 					<p class="price">$64.990</p>
-					<button>Ver Producto</button>
+					<button onclick="addToCart('Bolso de Aston villa', 64990)">Añadir al carrito</button>
 				</div>
 			</div>
 			<div class="item">
@@ -101,7 +112,7 @@
 				<div class="info-product">
 					<h2>Bolso Manchester United</h2>
 					<p class="price">$69.990</p>
-					<button>Ver Producto</button>
+					<button onclick="addToCart('Bolso Manchester United', 69990)">Añadir al carrito</button>
 				</div>
 			</div>
 			<div class="item">
@@ -114,7 +125,7 @@
 				<div class="info-product">
 					<h2>Bolso everton</h2>
 					<p class="price">$59.990</p>
-					<button>Ver Producto</button>
+					<button onclick="addToCart('Bolso everton', 59990)">Añadir al carrito</button>
 				</div>
 			</div>
 			<div class="item">
@@ -125,10 +136,9 @@
 					/>
 				</figure>
 				<div class="info-product">
-					<h2>Chaqueta de chándal ADN del Manchester United - Negro - Mujer</h2>
+					<h2>Chaqueta Manchester United - Negro - Mujer</h2>
 					<p class="price">$69.990</p>
-					<a href="pol_manunited.html">
-					<button>Ver Producto</button>
+					<button onclick="addToCart('Chaqueta Manchester United', 69990)">Añadir al carrito</button>
 				</a>
 				</div>
 			</div>
@@ -142,7 +152,7 @@
 				<div class="info-product">
 					<h2>ZAPATOS DE FÚTBOL FUTURE 7 ULTIMATE</h2>
 					<p class="price">219.990</p>
-					<button>Ver Producto</button>
+					<button onclick="addToCart('ZAPATOS DE FÚTBOL FUTURE 7 ULTIMATE', 219990)">Añadir al carrito</button>
 				</div>
 			</div>
 			<div class="item">
@@ -155,7 +165,7 @@
 				<div class="info-product">
 					<h2>ZAPATOS DE FÚTBOL KING ULTIMATE FG/AG</h2>
 					<p class="price">$169.990</p>
-					<button>Ver Producto</button>
+					<button onclick="addToCart('ZAPATOS DE FÚTBOL KING ULTIMATE FG/AG', 169990)">Añadir al carrito</button>
 				</div>
 			</div>
 			<div class="item">
@@ -168,7 +178,7 @@
 				<div class="info-product">
 					<h2>ZAPATOS DE FÚTBOL ULTRA ULTIMATE</h2>
 					<p class="price">$149.990</p>
-					<button>Ver Producto</button>
+					<button onclick="addToCart('ZAPATOS DE FÚTBOL ULTRA ULTIMATE', 149990)">Añadir al carrito</button>
 				</div>
 			</div>	
 			<div class="item">
@@ -181,11 +191,12 @@
 			<div class="info-product">
 				<h2>Balon Premier League Temporada 23/24</h2>
 				<p class="price">$59.990</p>
-				<button>Añadir al carrito</button>
+				<button onclick="addToCart('Balon Premier League Temporada 23/24', 59990)">Añadir al carrito</button>
 
 					</a>
 				</div>
 			</div>	
+			<script src="camiseta.js"></script>
 
 		</div>
 	</body>

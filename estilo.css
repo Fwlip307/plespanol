@@ -1,28 +1,30 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-body{
+body {
     min-height: 100vh;
     background-image: url(pl_fondo_vip.png);
+    background-size: cover; 
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.contenido{
-    background-color: rgb(106, 113, 255);
-    width: 40%;
-    padding: 30px;
+.contenido {
+    background-color:rgb(106, 113, 255);
+    width: 90%;
+    padding: 5vw;
     border-radius: 30px;
 }
 
-form{
+form {
     display: flex;
     flex-direction: column;
-    row-gap: 30px;
+    row-gap: 5vw; 
 }
+
 .btn{
     display: inline-block;
     padding: 11px 35px;
@@ -33,35 +35,50 @@ form{
 .btn:hover {
     background-color: rgb(150, 60, 255);
 }
-
-h1{
-    font-size: 1.5rem;
+h1 {
+    font-size: 5vw; 
     text-align: center;
-    color: white;
+    margin-bottom: 3vw; 
+    color: #ffffff;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
 }
 label{
     color: white;
 }
 
-a{
-    color: white;
-    text-decoration: none;
+input {
+    width: 100%; 
+    padding: 3vw; 
+    margin-bottom: 3vw; 
+    border: 1px solid #ffffff;
+    border-radius: 5px;
 }
 
-input{
-    outline: none !important; 
-    box-shadow: none !important;
+.correct, .incorrect {
+    border: 1px solid transparent !important; 
 }
 
-.correct{
-    border: 1px #2ac20896 solid !important;
-}
-.incorrect{
-    border: 1px #c2210891 solid !important;
-}
-
-.texto-error{
-    color: #ffffffc2;
-    font-size: .8rem;
+.texto-error {
+    color: #ff0000;
+    font-size: 3vw; 
     text-align: right;
+    margin-top: -2vw; 
+}
+
+@media screen and (max-width: 768px) {
+    .contenido {
+        width: 90%; /
+    }
+    
+    form {
+        padding: 3vw; 
+    }
+    
+    h1 {
+        font-size: 7vw; 
+    }
 }

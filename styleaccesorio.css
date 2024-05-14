@@ -337,3 +337,23 @@ footer {
 	margin-top: 50px;
 	color: #222;
 }
+
+@media (max-width:850px) {
+    .container-items{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    .nav{    
+        background-color: rgb(55, 0, 60);
+        height: 12vh;
+    }
+    nav{    
+        background-color: rgb(55, 0, 60);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 12vh;
+        font-size: 0.7rem;
+    }
+}
