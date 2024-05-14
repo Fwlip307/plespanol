@@ -32,16 +32,7 @@ a{
 #logo > img{
     height: 8vh;
 }
-#carro{
-    background-color: transparent;
-    border-radius: 50%;
-}
-#carro:hover{
-    background-color: rgb(255, 255, 255);
-    animation-duration: 50%;
-    transition-duration: 1s;
-    transform:rotate(360deg)scale(1.3)
-}
+
 
 @keyframes desplazar {
     0%{
@@ -165,4 +156,24 @@ img{
     z-index: 1000; /* Asegura que el carrito esté encima del resto del contenido */
     overflow-y: auto; /* Agrega desplazamiento vertical si el contenido es demasiado largo */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra para un aspecto flotante */
+}
+
+@media (max-width:850px) {
+    .container-items{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    .nav{    
+        background-color: rgb(55, 0, 60);
+        height: 12vh;
+    }
+    nav{    
+        background-color: rgb(55, 0, 60);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 12vh;
+        font-size: 0.7rem;
+    }
 }
