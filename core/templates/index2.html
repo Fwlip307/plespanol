@@ -1,18 +1,19 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Premier League Shop</title>
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="{% static 'style2.css' %}">
 </head>
 <body>
     <header class="header">
         <nav>
             
-            <a href="index2.html">
+            <a href="{% static 'index2.html' %}">
                 <div id = logo> 
-                    <img src="pre_logo.png" alt="">
+                    <img src="{% static 'pre_logo.png' %}" alt="">
                 </div>
             </a>
         </nav>
@@ -21,8 +22,8 @@
         </div>
         <div class="header-content container">
             <h1>Premier League Shop</h1>
-            <a href="camiseta.html" class="btn-1">CAMISETAS</a>
-            <a href="accesorio.html" class="btn-1">ACCESORIOS</a>
+            <a href="{% url 'camiseta' %}" class="btn-1">CAMISETAS</a>
+            <a href="{% url 'accesorio' %}" class="btn-1">ACCESORIOS</a>
             <a href="tour.html" class="btn-1">TOURS</a>
             <a href="entradas.html" class="btn-1">ENTRADAS</a>
             <a href="vip22.html" class="btn-1">VIP</a>
@@ -69,7 +70,7 @@
                         Maximo Goleador
                     </p>
                     <p>
-                        18 Goles⚽
+                        27 Goles⚽
                     </p>
                 </div>
                 <div class="viip-1">
@@ -79,7 +80,7 @@
                         Maximo Asistidor
                     </p>
                     <p>
-                        10 Asistencias👟
+                        13 Asistencias👟
                     </p>
 
                 </div>
@@ -90,7 +91,7 @@
                         Mas Porterias a cero
                     </p>
                     <p>
-                        12 porterias en 0🧤
+                        16 porterias en 0🧤
                     </p>
 
                 </div>

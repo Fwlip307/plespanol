@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'estilo.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>DreamDog</h1>
+            <div id="links">
+                <a href="{% url 'home' %}">Home</a>
+                <a href="{% url 'perros' %}">Perros</a>
+                <a href="dogs.html" target="_blank">Dogs</a>
+                <a href="#">Puppies</a>
+                <a href="#">Services</a>
+                <a href="#">Gallery</a>
+                <a href="#">Contacts</a>
+            </div>
+        </nav>
+        <div id="banner">
+            <div id="titulo">
+                Well-known<br>Breeders
+            </div>
+            <div id="boton">
+                Available puppies
+            </div>
+        </div>
+    </header>
+    <section id="contenido">
+        {% block 'contenido' %}
+
+        {% endblock %}
+    </section>
+    <footer>
+        Pagina de perros @2024
+    </footer>
+</body>
+</html>
