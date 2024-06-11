@@ -12,3 +12,33 @@ td, th{
 td>img{
     height: 60px;
 }
+
+*{
+    background-color:  rgb(55, 0, 60);
+    color: white;
+}
+
+nav{    
+    background-color: rgb(55, 0, 60);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 12vh;
+}
+
+a{
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+#logo{
+    background-color: rgb(253, 253, 253);
+    border-radius: 50%;
+}
+#logo:hover{
+    background-color: rgb(150, 60, 255);
+    animation-duration: 50%;
+    transition-duration: 1s;
+    transform:rotate(360deg)scale(1.3)
+}

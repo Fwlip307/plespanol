@@ -1,39 +1,60 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Carrito</title>
     <link rel="stylesheet" href="{% static 'carrito.css' %}">
 </head>
+<header>
+    <nav>
+        <a href="{% url 'home' %}">Inicio</a>
+        <a href="entradas.html">Entradas</a>
+        <a href="{% url 'camiseta' %}">Camisetas</a>
+        <a href="tour.html">Tour</a>
+        <a href="{% url 'accesorio' %}">Accesorios</a>
+        <a href="{% url 'carrito' %}">Carrito({{ request.carrito_count }}) </a>
+        <div id="floating-cart" style="display: none;">
+            <div class="info-product">
+                <div class="cart">
+                    <h2>Carrito de Compras</h2>
+                    <ul id="cart-items"></ul>
+                    <p>Total: <span id="cart-total">0</span></p>
+                    <button onclick="pay()">Pagar</button>
+                    <button onclick="hideFloatingCart()">Atrás</button>
+                </div>
+            </div>
+        </div>
+    </nav>  
+</header>
 <body>
     <h1>CARRITO</h1>
     <table>
         <thead>
             <tr>
-                <th>codigo</th>
-                <th>nombre</th>
-                <th>imagen</th>
-                <th>precio</th>
-                <th>cantidad</th>
-                <th>subtotal</th>
-                <th>eliminar</th>
+                <th>Código</th>
+                <th>Nombre</th>
+                <th>Imagen</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Subtotal</th>
+                <th>Eliminar</th>
             </tr>
-        
-
-            <tbody>
-                {% for item in request.session.carrito %}
-                <tr>{{ item.codigo }}</tr>
-                <tr>{{ item.detalle }}</tr>
-                <tr><img src="{{ item.imagen }}" alt=""></tr>
-                <tr>{{ item.precio }}</tr>
-                <tr>{{ item.cantidad }}</tr>
-                <tr>{{ item.subtotal }}</tr>
-                <tr><a href="{% url'delToCar' item.codigo %}">ELIMINAR</a></tr>
-                {% endfor %}
-            </tbody>
         </thead>
+        <tbody>
+            {% for item in carrito %}
+            <tr>
+                <td>{{ item.codigo }}</td>
+                <td>{{ item.nombre }}</td>
+                <td><img src="{{ item.imagen }}" alt="{{ item.nombre }} "></td>
+                <td>{{ item.precio }}</td>
+                <td>{{ item.cantidad }}</td>
+                <td>{{ item.subtotal }}</td>
+                <td><a href="{% url 'delToCar' item.codigo %}">ELIMINAR</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
     </table>
 </body>
 </html>

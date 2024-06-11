@@ -25,7 +25,8 @@
             <a href="{% url 'camiseta' %}" class="btn-1">CAMISETAS</a>
             <a href="{% url 'accesorio' %}" class="btn-1">ACCESORIOS</a>
             <a href="{% url 'tour' %}" class="btn-1">TOURS</a>
-            <a href="entradas.html" class="btn-1">ENTRADAS</a>
+            <a href="{% url 'entrada' %}" class="btn-1">ENTRADAS</a>
+            <a href="{% url 'carrito' %}"class="btn-1">Carrito({{ request.carrito_count }}) </a>
             <a href="{% url 'vip' %}" class="btn-1">VIP</a>
             <a href="{% url 'login' %}"class="btn-1">LOGIN</a>
         </div>

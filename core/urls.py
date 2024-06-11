@@ -7,8 +7,13 @@ urlpatterns = [
     path('camiseta', camisetas, name="camiseta"),
     path('accesorio', accesorios, name="accesorio"),
     path('tour', tours, name="tour"),
+    path('entrada', entradas, name="entrada"),
+    
     path('vip', vips, name="vip"),
     path('carrito', carrito, name="carrito"),
     path('addToCar/<codigo>', addToCar, name="addToCar"),
     path('delToCar/<codigo>', delToCar, name="delToCar"),
+    
+    
+    
 ]

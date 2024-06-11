@@ -30,7 +30,7 @@
             
             <a href="tour.html">Tour Estadio</a>
             <a href="{% url 'accesorio' %}">Accesorios</a>
-			<a href="{% url 'carrito' %}">Carrito </a>
+			<a href="{% url 'carrito' %}">Carrito({{ request.carrito_count }}) </a>
 			<div id="floating-cart" style="display: none;">
 				<div class="info-product">
 					<div class="cart">
