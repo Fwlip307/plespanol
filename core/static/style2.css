@@ -12,9 +12,8 @@
 /* Estilo para el título h1 */
 h1 {
     color: white;
-}
-h3{
-    color: #ffff;
+    text-align: center;
+    position: center;
 }
 
 /* Estilo del cuerpo del documento */
@@ -30,7 +29,7 @@ body {
 
 /* Estilos para el encabezado */
 .header {
-    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(fondo_limpiopl.png);
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(img/fondo_limpiopl.png);
     background-position: center bottom;
     background-repeat: no-repeat;
     background-size: cover;
@@ -222,7 +221,7 @@ body {
 
 /* Elemento "general-2" */
 .general-2 {
-    background-image: url(haaland_cam.png);
+    background-image: url(img/haaland_cam.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -231,7 +230,7 @@ body {
 
 /* Elemento "general-3" */
 .general-3 {
-    background-image: url(salah_zap.png);
+    background-image: url(img/salah_zap.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -240,7 +239,7 @@ body {
 
 /* Elemento "general-4" */
 .general-4 {
-    background-image: url(copa_pl.png);
+    background-image: url(img/copa_pl.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -249,11 +248,14 @@ body {
 
 /* Elemento "general-5" */
 .general-5 {
-    background-image: url(brereton.png);
+    background-image: url(img/brereton.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     width: 50%;
+}
+h3{
+    color: white;
 }
 
 /* Estilo para el título h2 */
@@ -372,6 +374,13 @@ h5 {
 .slide-content .btn-1:hover {
     background-color: rgb(150, 60, 255);
 }
+.ssa{
+    display: flex;
+    background-color: rgb(61, 24, 93);
+    position: center;
+    padding: 6vh;
+}
+
 
 /* Animación para el slider */
 @keyframes cambio {

@@ -1,323 +1,68 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
-	<head>
+<html lang="es">
+<head>
     <style>
-        body{
+        body {
             background-color: rgb(55, 0, 60);
         }
     </style>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1.0"
-		/>
-		<title>Camisetas</title>
-		<link rel="stylesheet" href="{% static 'estylecamiseta.css' %}" />
-	</head>
-	<body>
-		<header>
-            <nav>
-				<a href="index2.html">
-					<div id = logo> 
-						<img src="logopl11111.png.png" alt="">
-					</div>
-				</a>
-				<a href="index2.html">Inicio</a>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Camisetas</title>
+    <link rel="stylesheet" href="{% static 'estylecamiseta.css' %}" />
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{% url 'home' %}">
+                <div id="logo"> 
+                    <img src="{% static 'img/logopl11111.png.png' %}" alt="Logo">
+                </div>
+            </a>
+            <a href="{% url 'home' %}">Inicio</a>
             <a href="entradas.html">Entradas</a>
-            <a href="camiseta.html">Camisetas</a>
-            
+            <a href="{% url 'camiseta' %}">Camisetas</a>
             <a href="tour.html">Tour</a>
-            <a href="accesorio.html">Accesorios</a>
-			<div id="floating-cart" style="display: none;">
-				<div class="info-product">
-					<div class="cart">
-						<h2>Carrito de Compras</h2>
-						<ul id="cart-items"></ul>
-						<p>Total: <span id="cart-total">0</span></p>
-						<button onclick="pay()">Pagar</button>
-						<button onclick="hideFloatingCart()">Atrás</button>
-					</div>
-				</div>
-			</div>
-
-			<div id="cart-icon">
-				<img src="icon_shop.png" alt="">
-			</div>
-    
-            </nav>
-			
-
-			
-            
-		</header>
-        <h1>Tienda de Camisetas</h1>
-		<div class="container-items">
-			<div class="item">
-				<figure>
-					<img
-						src="cam_manunited.png"
-						alt="producto"
-					/>
-				</figure>
-				<div class="info-product">
-					<h2>Camiseta Local Manchester United 23/24</h2>
-					<p class="price">$79.990</p>
-					<button onclick="addToCart('Camiseta Local Manchester United 23/24', 79990)">Añadir al carrito</button>
-					</a>
-				</div>
-			</div>
-			<div class="item">
-				<figure>
-					<img
-						src="camman_city.png"
-						alt="producto"
-					/>
-				</figure>
-				<div class="info-product">
-					<h2>Camiseta Local Manchester City 23/24</h2>
-					<p class="price">$69.990</p>
-						<button onclick="addToCart('Camiseta Local Manchester City 23/24', 69990)">Añadir al carrito</button>
-					</a>
-				</div>
-			</div>
-			<div class="item">
-				<figure>
-					<img
-						src="cam_arsenal.png"
-						alt="producto"
-					/>
-				</figure>
-				<div class="info-product">
-					<h2>Camiseta Local Arsenal 23/24</h2>
-					<p class="price">$64.990</p>
-					<button onclick="addToCart('Camiseta Local Arsenal 23/24', 64990)">Añadir al carrito</button>
-				</div>
-			</div>
-			<div class="item">
-				<figure>
-					<img
-						src="cam_brighton.png"
-						alt="producto"
-					/>
-				</figure>
-				<div class="info-product">
-					<h2>Camiseta Local Brighton and Hove Albion 23/24</h2>
-					<p class="price">$64.990</p>
-					<button onclick="addToCart('Camiseta Local Brighton and Hove Albion 23/24', 64990)">Añadir al carrito</button>
-				</div>
-			</div>
-			<div class="item">
-				<figure>
-					<img
-						src="cam_newcastle.png"
-						alt="producto"
-					/>
-				</figure>
-				<div class="info-product">
-					<h2>Camiseta Local Newcastle United 23/24</h2>
-					<p class="price">$69.990</p>
-					<button onclick="addToCart('Camiseta Local Newcastle United 23/24', 69990)">Añadir al carrito</button>
-				</div>
-			</div>
-			<div class="item">
-				<figure>
-					<img
-						src="astonvilla_cam.png"
-						alt="producto"
-					/>
-				</figure>
-				<div class="info-product">
-					<h2>Camiseta Local Aston Villa 23/24</h2>
-					<p class="price">$59.990</p>
-					<button onclick="addToCart('Camiseta Local Aston Villa 23/24', 59990)">Añadir al carrito</button>
-				</div>
-			</div>
-			<div class="item">
-				<figure>
-					<img
-						src="tottenham_cam.png"
-						alt="producto"
-					/>
-				</figure>
-				<div class="info-product">
-					<h2>Camiseta Local Tottenham Hotspur 23/24</h2>
-					<p class="price">$69.990</p>
-					<button onclick="addToCart('Camiseta Local Tottenham Hotspur 23/24', 69990)">Añadir al carrito</button>
-				</div>
-			</div>
-			<div class="item">
-				<figure>
-					<img
-						src="ca_liverpool.png"
-						alt="producto"
-					/>
-				</figure>
-				<div class="info-product">
-					<h2>Camiseta Local Liverpool 23/24</h2>
-					<p class="price">$79.990</p>
-					<button onclick="addToCart('Camiseta Local Liverpool 23/24', 79990)">Añadir al carrito</button>
-				</div>
-			</div>
-			<div class="item">
-				<figure>
-					<img
-						src="westham_cam.png"
-						alt="producto"
-					/>
-				</figure>
-				<div class="info-product">
-					<h2>Camiseta Local West Ham United 23/24</h2>
-					<p class="price">$69.990</p>
-					<button onclick="addToCart('Camiseta Local West Ham United 23/24', 69990)">Añadir al carrito</button>
-				</div>
-			</div>
-			<div class="item">
-				<figure>
-					<img
-						src="cam_wolves.png"
-						alt="producto"
-					/>
-				</figure>
-				<div class="info-product">
-					<h2>Camiseta Local Wolves 23/24</h2>
-					<p class="price">$49.990</p>
-					<button onclick="addToCart('Camiseta Local Wolves 23/24', 49990)">Añadir al carrito</button>
-				</div>
-			</div>
-			<div class="item">
-				<figure>
-					<img
-						src="chelsea_cam.png"
-						alt="producto"
-					/>
-				</figure>
-				<div class="info-product">
-					<h2>Camiseta Local Chelsea 23/24</h2>
-					<p class="price">$64.990</p>
-					<button onclick="addToCart('Camiseta Local Chelsea 23/24', 64990)">Añadir al carrito</button>
-				</div>
-			</div>
-			<div class="item">
-				<figure>
-					<img
-						src="cam_fulham.png"
-						alt="producto"
-					/>
-				</figure>
-				<div class="info-product">
-					<h2>Camiseta Local Fulham 23/24</h2>
-					<p class="price">$54.990</p>
-					<button onclick="addToCart('Camiseta Local Fulham 23/24', 54990)">Añadir al carrito</button>
-				</div>
-			</div>
-			<div class="item">
-				<figure>
-					<img
-						src="bournemouth_cam.png"
-						alt="producto"
-					/>
-				</figure>
-				<div class="info-product">
-					<h2>Camiseta Local Bournemouth 23/24</h2>
-					<p class="price">$49.990</p>
-					<button onclick="addToCart('Camiseta Local Bournemouth 23/24', 49990)">Añadir al carrito</button>
-				</div>
-			</div>
-			<div class="item">
-				<figure>
-					<img
-						src="crypalace_cam.png"
-						alt="producto"
-					/>
-				</figure>
-				<div class="info-product">
-					<h2>Camiseta Local Crystal Palace 23/24</h2>
-					<p class="price">$59.990</p>
-					<button onclick="addToCart('Camiseta Local Crystal Palace 23/24', 59990)">Añadir al carrito</button>
-				</div>
-			</div>
-			<div class="item">
-				<figure>
-					<img
-						src="brendford_cam.png"
-						alt="producto"
-					/>
-				</figure>
-				<div class="info-product">
-					<h2>Camiseta Local Brendford 23/24</h2>
-					<p class="price">$49.990</p>
-					<button onclick="addToCart('Camiseta Local Brendford 23/24', 49990)">Añadir al carrito</button>
-				</div>
-			</div>
-			<div class="item">
-				<figure>
-					<img
-						src="everton_cam.png"
-						alt="producto"
-					/>
-				</figure>
-				<div class="info-product">
-					<h2>Camiseta Local Everton 23/24</h2>
-					<p class="price">$64.990</p>
-					<button onclick="addToCart('Camiseta Local Everton 23/24', 64990)">Añadir al carrito</button>
-				</div>
-			</div>
-			<div class="item">
-				<figure>
-					<img
-						src="cam_luton.png"
-						alt="producto"
-					/>
-				</figure>
-				<div class="info-product">
-					<h2>Camiseta Local Luton Town 23/24</h2>
-					<p class="price">$54.990</p>
-					<button onclick="addToCart('Camiseta Local Luton Town 23/24', 54990)">Añadir al carrito</button>
-				</div>
-			</div>
-			<div class="item">
-				<figure>
-					<img
-						src="cam_nottinghamforest.png"
-						alt="producto"
-					/>
-				</figure>
-				<div class="info-product">
-					<h2>Camiseta Local Nottingham Forest 23/24</h2>
-					<p class="price">$49.990</p>
-					<button onclick="addToCart('Camiseta Local Nottingham Forest 23/24', 49990)">Añadir al carrito</button>
-				</div>
-			</div>
-			<div class="item">
-				<figure>
-					<img
-						src="burnley_cam.png"
-						alt="producto"
-					/>
-				</figure>
-				<div class="info-product">
-					<h2>Camiseta Local Burnley 23/24</h2>
-					<p class="price">$59.990</p>
-					<button onclick="addToCart('Camiseta Local Burnley 23/24', 59990)">Añadir al carrito</button>
-				</div>
-			</div>
-			<div class="item">
-				<figure>
-					<img
-						src="cam_sheffieldunited.png"
-						alt="producto"
-					/>
-				</figure>
-				<div class="info-product">
-					<h2>Camiseta Local Sheffield United 23/24</h2>
-					<p class="price">$54.990</p>
-					<button onclick="addToCart('Camiseta Local Sheffield United 23/24', 54990)">Añadir al carrito</button>
-				</div>
-			</div>
-			<script src="camiseta.js"></script>
-
-		</div>
-	</body>
+            <a href="{% url 'accesorio' %}">Accesorios</a>
+            <div id="floating-cart" style="display: none;">
+                <div class="info-product">
+                    <div class="cart">
+                        <h2>Carrito de Compras</h2>
+                        <ul id="cart-items"></ul>
+                        <p>Total: <span id="cart-total">0</span></p>
+                        <button onclick="pay()">Pagar</button>
+                        <button onclick="hideFloatingCart()">Atrás</button>
+                    </div>
+                </div>
+            </div>
+            <div id="cart-icon">
+                <img src="{% static 'img/icon_shop.png' %}" alt="Carrito de compras">
+            </div>
+        </nav>  
+    </header>
+    <h1>Tienda de Camisetas</h1>
+    <div class="container-items">
+        {% for ca in cam %}
+        <div class="item">
+            <figure>
+                <img src="{{ ca.imagen }}" alt="producto">
+            </figure>
+            <div class="info-product">
+                <h2>{{ ca.detalle }}</h2>
+                <p class="price">Cantidad: {{ ca.stock }}</p>
+                {% if ca.oferta %}
+                <p class="tachado">Antes: {{ ca.descuento15 }}</p>
+                <p class="price">${{ ca.precio }}</p>
+                {% else %}
+                <p class="price">${{ ca.precio }}</p>
+                {% endif %}
+                <button onclick="addToCart('{{ ca.detalle }}', {{ ca.precio }})">Añadir al carrito</button>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <script src="{% static 'camiseta.js' %}"></script>
+</body>
 </html>

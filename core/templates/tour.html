@@ -42,92 +42,23 @@
 		</header>
         <h1>Tours por los estadios del Futbol ingles</h1>
 		<div class="container-items">
+			{% for to in tou %}
 			<div class="item">
 				<figure>
 					<img
-						src="tour_oldtraford.png"
+						src="{{ to.imagen }}"
 						alt="producto"
 					/>
 				</figure>
 				<div class="info-product">
-					<h2>Tour Old Traford Stadium Manchester United</h2>
-					<p class="price">$14.990</p>
-                    <p>Fechas: 15/04 | 19/04 | 24/04</p>
-                    <p>Horas:   09:00 | 14:00 | 18:30</p>
-					<button>Agendar Hora 1</button>
-					<button>Agendar Hora 2</button>
-					<button>Agendar Hora 3</button>
-				</div>
-			</div>
-			<div class="item">
-				<figure>
-					<img
-						src="etihad2.png"
-						alt="producto"
-					/>
-				</figure>
-				<div class="info-product">
-					<h2>Tour Etihad Stadium Manchester City</h2>
-					<p class="price">$12.990</p>
-                    <p>Fechas: 15/04 | 19/04 | 24/04</p>
-                    <p>Horas:   09:00 | 14:00 | 18:30</p>
-					<button>Agendar Hora 1</button>
-					<button>Agendar Hora 2</button>
-					<button>Agendar Hora 3</button>
-				</div>
-			</div>
-			<div class="item">
-				<figure>
-					<img
-						src="emirates.png"
-						alt="producto"
-					/>
-				</figure>
-				<div class="info-product">
-					<h2>Tour Emirates Stadium Arsenal</h2>
-					<p class="price">$16.990</p>
-                    <p>Fechas: 15/04 | 19/04 | 24/04</p>
-                    <p>Horas:   09:00 | 14:00 | 18:30</p>
-					<button>Agendar Hora 1</button>
-					<button>Agendar Hora 2</button>
-					<button>Agendar Hora 3</button>
-				</div>
-			</div>
-			<div class="item">
-				<figure>
-					<img
-						src="brightonstadium.png"
-						alt="producto"
-					/>
-				</figure>
-				<div class="info-product">
-					<h2>Tour Falmer Stadium Brighton and Hove Albion</h2>
-					<p class="price">$13.990</p>
-                    <p>Fechas: 15/04 | 19/04 | 24/04</p>
-                    <p>Horas:   09:00 | 14:00 | 18:30</p>
-					<button>Agendar Hora 1</button>
-					<button>Agendar Hora 2</button>
-					<button>Agendar Hora 3</button>
-				</div>
-			</div>
-			<div class="item">
-				<figure>
-					<img
-						src="newcastlestadium.png"
-						alt="producto"
-					/>
-				</figure>
-				<div class="info-product">
-					<h2>Tour St James' Park Stadium NewCastle United</h2>
-					<p class="price">$19.990</p>
-                    <p>Fechas: 15/04 | 19/04 | 24/04</p>
-                    <p>Horas:   09:00 | 14:00 | 18:30</p>
-					<button>Agendar Hora 1</button>
-					<button>Agendar Hora 2</button>
-					<button>Agendar Hora 3</button>
+					<h2>{{ to.detalle }}</h2>
+					<p class="price">${{ to.precio }}</p>
+                    <p>{{ to.hora }}</p>
+					<button>Agendar Hora</button>
 				</div>
 			</div>
 			
 		</div>
+		{% endfor %}
 	</body>
 </html>

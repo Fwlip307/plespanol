@@ -1,2 +1,0 @@
-# plespanol
-PREMIER LEAGUE PAGINA ESPAÑOL 

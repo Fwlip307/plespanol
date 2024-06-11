@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'carrito.css' %}">
+</head>
+<body>
+    <h1>CARRITO</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>codigo</th>
+                <th>nombre</th>
+                <th>imagen</th>
+                <th>precio</th>
+                <th>cantidad</th>
+                <th>subtotal</th>
+                <th>eliminar</th>
+            </tr>
+        
+
+            <tbody>
+                {% for item in request.session.carrito %}
+                <tr>{{ item.codigo }}</tr>
+                <tr>{{ item.detalle }}</tr>
+                <tr><img src="{{ item.imagen }}" alt=""></tr>
+                <tr>{{ item.precio }}</tr>
+                <tr>{{ item.cantidad }}</tr>
+                <tr>{{ item.subtotal }}</tr>
+                <tr><a href="{% url'delToCar' item.codigo %}">ELIMINAR</a></tr>
+                {% endfor %}
+            </tbody>
+        </thead>
+    </table>
+</body>
+</html>

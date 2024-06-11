@@ -32,7 +32,9 @@ a{
 #logo > img{
     height: 8vh;
 }
-
+.tachado {
+    text-decoration: line-through;
+}
 
 @keyframes desplazar {
     0%{
