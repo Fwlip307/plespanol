@@ -4,10 +4,10 @@ table{
     margin: 0px 10%;
 }
 
-td, th{
-    border: 1px white;
-    padding: 0px 5px;
 
+td, th {
+    border: 1px solid white; /* Cambia "white" por "solid white" */
+    padding: 8px;
 }
 td>img{
     height: 60px;
@@ -17,19 +17,69 @@ td>img{
     background-color:  rgb(55, 0, 60);
     color: white;
 }
+h1 {
+    color: white;
+    text-align: center;
+    position: center;
+}
+.ssa {
+    background-color: rgb(61, 24, 93);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 12vh;
+    width: 100%;
+    color: white; /* Color del texto */
+    position: relative;
+    bottom: 0; /* Asegura que el footer esté en la parte inferior */
+    text-align: center; /* Centra el contenido */
+    flex-direction: column; /* Organiza los hijos en columna */
+}
 
-nav{    
-    background-color: rgb(55, 0, 60);
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-logo {
+    height: 8vh;
+    margin-bottom: 10px;
+    border-radius: 50%; /* Hace que la imagen sea circular */
+    background-color: white; /* Fondo blanco */
+    padding: 5px; /* Espacio alrededor de la imagen */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra suave */
+}
+
+nav {
+    background-color: rgb(61, 24, 93);
     display: flex;
     justify-content: space-around;
     align-items: center;
     height: 12vh;
+    text-align: center; /* Añade esta línea para centrar el texto */
+}
+
+.btn-1 {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: rgb(61, 24, 93);
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Estilo al pasar el cursor sobre los botones */
+.btn-1:hover {
+    background-color: rgb(150, 60, 255);
 }
 
 a{
     color: white;
     text-transform: uppercase;
     text-decoration: none;
+    position: center;
 }
 
 #logo{
@@ -41,4 +91,19 @@ a{
     animation-duration: 50%;
     transition-duration: 1s;
     transform:rotate(360deg)scale(1.3)
+}
+
+.boton_1 {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: rgb(61, 24, 93);
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Estilo al pasar el cursor sobre los botones */
+.boton_1:hover {
+    background-color: rgb(150, 60, 255);
 }

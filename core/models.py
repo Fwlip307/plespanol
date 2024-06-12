@@ -26,6 +26,7 @@ class Accesorio(models.Model):
     stock = models.IntegerField()
     oferta = models.BooleanField()
     imagen = models.CharField(max_length=200)
+    imagen2 = models.CharField(max_length=200)
     
     def descuento15(self):
         if self.oferta:
@@ -44,9 +45,14 @@ class Tour(models.Model):
     precio = models.IntegerField()
     imagen = models.CharField(max_length=200)
     hora = models.CharField(max_length=50)
-    
-    
-    
+
+class Ticket (models.Model):
+    codigo = models.CharField(max_length=4, primary_key=True)
+    detalle = models.CharField(max_length=200)
+    precio = models.IntegerField()
+    imagen = models.CharField(max_length=200)
+    fecha = models.CharField(max_length=50)
+        
 
     
     def __str__(self):

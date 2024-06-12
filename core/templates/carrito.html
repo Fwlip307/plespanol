@@ -9,23 +9,12 @@
 </head>
 <header>
     <nav>
-        <a href="{% url 'home' %}">Inicio</a>
-        <a href="entradas.html">Entradas</a>
-        <a href="{% url 'camiseta' %}">Camisetas</a>
-        <a href="tour.html">Tour</a>
-        <a href="{% url 'accesorio' %}">Accesorios</a>
-        <a href="{% url 'carrito' %}">Carrito({{ request.carrito_count }}) </a>
-        <div id="floating-cart" style="display: none;">
-            <div class="info-product">
-                <div class="cart">
-                    <h2>Carrito de Compras</h2>
-                    <ul id="cart-items"></ul>
-                    <p>Total: <span id="cart-total">0</span></p>
-                    <button onclick="pay()">Pagar</button>
-                    <button onclick="hideFloatingCart()">Atrás</button>
-                </div>
-            </div>
-        </div>
+        <a href="{% url 'home' %}" class="btn-1">Inicio</a>
+        <a href="{% url 'ticket' %}" class="btn-1">ENTRADAS</a>
+        <a href="{% url 'camiseta' %}" class="btn-1">Camisetas</a>
+        <a href="{% url 'tour' %}" class="btn-1">TOURS</a>
+        <a href="{% url 'accesorio' %}" class="btn-1">Accesorios</a>
+        <a href="{% url 'carrito' %}"><img src="{% static 'img/icon_shop.png' %}" alt="">({{ request.carrito_count }}) </a>
     </nav>  
 </header>
 <body>
@@ -51,10 +40,11 @@
                 <td>{{ item.precio }}</td>
                 <td>{{ item.cantidad }}</td>
                 <td>{{ item.subtotal }}</td>
-                <td><a href="{% url 'delToCar' item.codigo %}">ELIMINAR</a></td>
+                <td><a href="{% url 'delToCar' item.codigo %}" class="boton_1">ELIMINAR</a></td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
 </body>
+
 </html>

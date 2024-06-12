@@ -4,3 +4,4 @@ from .models import *
 admin.site.register(Camiseta)
 admin.site.register(Accesorio)
 admin.site.register(Tour)
+admin.site.register(Ticket)

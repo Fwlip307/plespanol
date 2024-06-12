@@ -5,71 +5,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Venta de Entradas de Fútbol</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https: //fonts.googleapis.com/css2?family=Fjalla+One&family=Rowdies:wght@300;400;700&family=Titan+One&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet">
-
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Fjalla+One&family=Rowdies:wght@300;400;700&family=Titan+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'styleentrada.css' %}">
 </head>
 <body>
     <header>
         <nav>
-            <a href="index2.html">
-                <div id = logo> 
-                    <img src="logopl11111.png.png" alt="">
+            <a href="{% url 'home' %}">
+                <div id="logo"> 
+                    <img src="{% static 'img/logopl11111.png.png' %}" alt="Logo">
                 </div>
             </a>
-            <a href="index2.html">Inicio</a>
-        <a href="entradas.html">Entradas</a>
-        <a href="camiseta.html">Camisetas</a>
-        
-        <a href="tour.html">Tour</a>
-        <a href="accesorio.html">Accesorios</a>
-        <div id = carro> 
-            <img src="icon_shop.png" alt="">
-        </div>
-
-        </nav>
-        
-
-        
-        
+            <a href="{% url 'home' %}" class="boton_1">Inicio</a>
+            <a href="{% url 'ticket' %}" class="boton_1">ENTRADAS</a> 
+            <a href="{% url 'camiseta' %}" class="boton_1">Camisetas</a>
+            <a href="{% url 'tour' %}" class="boton_1">TOURS</a>
+            <a href="{% url 'accesorio' %}" class="boton_1">Accesorios</a>
+            <a href="{% url 'carrito' %}"><img src="{% static 'img/icon_shop.png' %}" alt="">({{ request.carrito_count }}) </a>
+        </nav> 
     </header>
     <main>
-        <div class="match">
-            <img src="manchester_united.png" alt="Equipo 1" class="new-image">
-            <h2>Manchester City vs Manchester united </h2>
-            <img src="manchester_city.png" alt="Equipo 2" class="west-image">
-            <p>Lugar: Old trafford</p>
-            <p>Fecha: 15 de julio de 2024</p>
-            <button class="btn-1">Comprar Entradas</button>
-        </div>
-        <div class="match2"> 
-            <img src="castle.png" alt="Equipo 1" class="new-image">
-            <h2>New castle vs west ham</h2>
-            <img src="westt.png" alt="Equipo 2" class="west-image">
-            <p>Lugar: St James' Park</p>
-            <p>Fecha: 21 de junio de 2024</p>
-            <button class="btn-1">Comprar Entradas</button>
-        </div>
-        <div class="match3"> 
-            <img src="burn.png" alt="Equipo 1" class="new-image">
-            <h2>Burnley vs Brighton </h2>
-            <img src="brighton_escu.png" alt="Equipo 2" class="west-image">
-            <p>Lugar: Turf Moor</p>
-            <p>Fecha: 29 de abril de 2024</p>
-            <button class="btn-1">Comprar Entradas</button>
-        </div>
-        <div class="match4"> 
-            <img src="cheee.png" alt="Equipo 1" class="new-image">
-            <h2>Chelsea vs Liverpool </h2>
-            <img src="liv_escu.png" alt="Equipo 2" class="west-image">
-            <p>Lugar: Anfield, Liverpool</p>
-            <p>Fecha: 14 de noviembre de 2024</p>
-            <button class="btn-1">Comprar Entradas</button>
-        </div>
+        {% for tk in tkt %}
+            <div class="match">
+    
+                <h2>{{tk.detalle }} </h2>
+        	    <img src="{{ tk.imagen }}">
+        	    <p>{{ tk.fecha }}</p>
+                <a href="{% url 'addToCar' tk.codigo %}" class="boton_1">AÑADIR AL CARRITO</a>
+        	</div>
+        {% endfor %}
+        
+        
     </main>
+    <footer class="ssa">
+        <div class="footer-content">
+            <img src="{% static 'img/logopl11111.png.png' %}" alt="Logo" class="footer-logo">
+            <div>PREMIER LEAGUE SHOP</div>
+        </div>
+    </footer>
 </body>
 </html>

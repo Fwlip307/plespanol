@@ -2,11 +2,6 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <style>
-        body {
-            background-color: rgb(55, 0, 60);
-        }
-    </style>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,49 +16,42 @@
                     <img src="{% static 'img/logopl11111.png.png' %}" alt="Logo">
                 </div>
             </a>
-            <a href="{% url 'home' %}">Inicio</a>
-            <a href="entradas.html">Entradas</a>
-            <a href="{% url 'camiseta' %}">Camisetas</a>
-            <a href="tour.html">Tour</a>
-            <a href="{% url 'accesorio' %}">Accesorios</a>
-			<a href="{% url 'carrito' %}">Carrito({{ request.carrito_count }}) </a>
-            <div id="floating-cart" style="display: none;">
-                <div class="info-product">
-                    <div class="cart">
-                        <h2>Carrito de Compras</h2>
-                        <ul id="cart-items"></ul>
-                        <p>Total: <span id="cart-total">0</span></p>
-                        <button onclick="pay()">Pagar</button>
-                        <button onclick="hideFloatingCart()">Atrás</button>
-                    </div>
-                </div>
-            </div>
-            <div id="cart-icon">
-                <img src="{% static 'img/icon_shop.png' %}" alt="Carrito de compras">
-            </div>
+            <a href="{% url 'home' %}" class="boton_1">Inicio</a>
+            <a href="{% url 'ticket' %}" class="btn-1">ENTRADAS</a> 
+            <a href="{% url 'camiseta' %}" class="boton_1">Camisetas</a>
+            <a href="{% url 'tour' %}" class="btn-1">TOURS</a>
+            <a href="{% url 'accesorio' %}" class="boton_1">Accesorios</a>
+            <a href="{% url 'carrito' %}"><img src="{% static 'img/icon_shop.png' %}" alt="">({{ request.carrito_count }}) </a>
         </nav>  
     </header>
-    <h1>Tienda de Camisetas</h1>
-    <div class="container-items">
-        {% for ca in cam %}
-        <div class="item">
-            <figure>
-                <img src="{{ ca.imagen }}" alt="producto">
-            </figure>
-            <div class="info-product">
-                <h2>{{ ca.detalle }}</h2>
-                <p class="price">Cantidad: {{ ca.stock }}</p>
-                {% if ca.oferta %}
-                <p class="tachado">Antes: {{ ca.descuento15 }}</p>
-                <p class="price">${{ ca.precio }}</p>
-                {% else %}
-                <p class="price">${{ ca.precio }}</p>
-                {% endif %}
-                <a href="{% url 'addToCar' ca.codigo %}" class="boton_1">añadir</a>
+    <div class="content">
+        <h1>Tienda de Camisetas</h1>
+        <div class="container-items">
+            {% for ca in cam %}
+            <div class="item">
+                <figure>
+                    <img src="{{ ca.imagen }}" alt="producto">
+                </figure>
+                <div class="info-product">
+                    <h2>{{ ca.detalle }}</h2>
+                    <p class="price">Cantidad: {{ ca.stock }}</p>
+                    {% if ca.oferta %}
+                    <p class="tachado">Antes: {{ ca.descuento15 }}</p>
+                    <p class="price">${{ ca.precio }}</p>
+                    {% else %}
+                    <p class="price">${{ ca.precio }}</p>
+                    {% endif %}
+                    <a href="{% url 'addToCar' ca.codigo %}" class="boton_1">AÑADIR AL CARRITO</a>
+                </div>
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
     </div>
-    <script src="{% static 'camiseta.js' %}"></script>
+    <footer class="ssa">
+        <div class="footer-content">
+            <img src="{% static 'img/logopl11111.png.png' %}" alt="Logo" class="footer-logo">
+            <div>PREMIER LEAGUE SHOP</div>
+        </div>
+    </footer>
 </body>
 </html>

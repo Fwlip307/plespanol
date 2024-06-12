@@ -2,11 +2,6 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-    <style>
-        body{
-            background-color: rgb(55, 0, 60);
-        }
-    </style>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta
@@ -20,32 +15,18 @@
 		<header>
 			<nav>
 				<a href="{% url 'home' %}">
-					<div id = logo> 
-						<img src="{% static 'img/logopl11111.png.png' %}" alt="">
+					<div id="logo"> 
+						<img src="{% static 'img/logopl11111.png.png' %}" alt="Logo">
 					</div>
 				</a>
-				<a href="{% url 'home' %}">Inicio</a>
-            <a href="entradas.html">Entradas</a>
-            <a href="{% url 'camiseta' %}">Camisetas</a>
-            
-            <a href="tour.html">Tour Estadio</a>
-            <a href="{% url 'accesorio' %}">Accesorios</a>
-			<a href="{% url 'carrito' %}">Carrito({{ request.carrito_count }}) </a>
-			<div id="floating-cart" style="display: none;">
-				<div class="info-product">
-					<div class="cart">
-						<h2>Carrito de Compras</h2>
-						<ul id="cart-items"></ul>
-						<p>Total: <span id="cart-total">0</span></p>
-						<button onclick="pay()">Pagar</button>
-						<button onclick="hideFloatingCart()">Atrás</button>
-					</div>
-				</div>
-			</div>
-			<div id="cart-icon">
-				<img src="{% static 'img/icon_shop.png' %}" alt="">
-			</div>
-            </nav>
+				<a href="{% url 'home' %}" class="boton_1">Inicio</a>
+				<a href="entradas.html" class="boton_1">Entradas</a>
+				<a href="{% url 'camiseta' %}" class="boton_1">Camisetas</a>
+				<a href="tour.html" class="boton_1">Tour</a>
+				<a href="{% url 'accesorio' %}" class="boton_1">Accesorios</a>
+				<a href="{% url 'carrito' %}"><img src="{% static 'img/icon_shop.png' %}" alt="">({{ request.carrito_count }}) </a>
+				
+			</nav>  
 		</header>
         <h1>Tours por los estadios del Futbol ingles</h1>
 		<div class="container-items">
@@ -61,12 +42,17 @@
 					<h2>{{ to.detalle }}</h2>
 					<p class="price">${{ to.precio }}</p>
                     <p>{{ to.hora }}</p>
-					<button>Agendar Hora</button>
-					<a href="{% url 'addToCar' to.codigo %}">añadir</a>
+					<a href="{% url 'addToCar' to.codigo %}" class="boton_1">AÑADIR AL CARRITO</a>
 				</div>
 			</div>
 			
 		</div>
 		{% endfor %}
 	</body>
+	<footer class="ssa">
+		<div class="footer-content">
+			<img src="{% static 'img/logopl11111.png.png' %}" alt="Logo" class="footer-logo">
+			<div>PREMIER LEAGUE SHOP</div>
+		</div>
+	</footer>
 </html>

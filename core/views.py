@@ -9,8 +9,9 @@ def home (request):
 def login (request):
     return render(request, 'iniciar_sesion.html')
 
-def entradas (request):
-    return render(request, 'entradas.html')
+def tickets (request):
+    tkt = Ticket.objects.all()
+    return render(request, 'entradas.html',{'tkt':tkt})
 
 def camisetas (request):
     cam = Camiseta.objects.all()
@@ -39,7 +40,10 @@ def addToCar(request, codigo):
             try:
                 producto = Tour.objects.get(codigo=codigo)
             except Tour.DoesNotExist:
-                raise Http404("Producto no encontrado")
+                try:
+                    producto = Ticket.objects.get(codigo=codigo)
+                except Ticket.DoesNotExist:
+                    raise Http404("Producto no encontrado")
 
     for item in carrito:
         if item["codigo"] == codigo:
@@ -57,8 +61,8 @@ def addToCar(request, codigo):
         })
 
     request.session["carrito"] = carrito
-    print("Carrito actualizado:", carrito)  # Mensaje de depuración
-    return redirect('carrito')  # Asegúrate de que esta vista exista y sea correcta
+    print("Carrito actualizado:", carrito)  
+    return redirect('carrito')  
 def delToCar(request, codigo):
     carrito = request.session.get("carrito", [])
     producto = None
@@ -72,7 +76,10 @@ def delToCar(request, codigo):
             try:
                 producto = Tour.objects.get(codigo=codigo)
             except Tour.DoesNotExist:
-                raise Http404("Producto no encontrado")
+                try:
+                    producto = Ticket.objects.get(codigo=codigo)
+                except Ticket.DoesNotExist:
+                    raise Http404("Producto no encontrado")
 
     item_to_remove = None
 
@@ -89,8 +96,8 @@ def delToCar(request, codigo):
         carrito.remove(item_to_remove)
 
     request.session["carrito"] = carrito
-    print("Carrito actualizado:", carrito)  # Mensaje de depuración
-    return redirect('carrito')  # Asegúrate de que esta vista exista y sea correcta
+    print("Carrito actualizado:", carrito)  
+    return redirect('carrito')  
 
 def carrito(request):
     return render(request, 'carrito.html', {

@@ -1,18 +1,66 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
-
 
 *{
     font-family: "Odibee Sans", sans-serif;
     margin: 0%;
+    background-color: rgb(55, 0, 60);
 }
 
 nav{    
-    background-color: rgb(55, 0, 60);
+    background-color: rgb(61, 24, 93);
     display: flex;
     justify-content: space-around;
     align-items: center;
+    height: 12vh;
+}
+
+
+.boton_1 {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: rgb(61, 24, 93);
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Estilo al pasar el cursor sobre los botones */
+.boton_1:hover {
+    background-color: rgb(150, 60, 255);
+}
+h1 {
+    color: white;
+    text-align: center;
+    position: center;
+}
+.ssa {
+    background-color: rgb(61, 24, 93);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 12vh;
+    width: 100%;
+    color: white; /* Color del texto */
+    position: relative;
+    bottom: 0; /* Asegura que el footer esté en la parte inferior */
+    text-align: center; /* Centra el contenido */
+    flex-direction: column; /* Organiza los hijos en columna */
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-logo {
     height: 8vh;
+    margin-bottom: 10px;
+    border-radius: 50%; /* Hace que la imagen sea circular */
+    background-color: white; /* Fondo blanco */
+    padding: 5px; /* Espacio alrededor de la imagen */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra suave */
 }
 
 a{
@@ -20,6 +68,8 @@ a{
     text-transform: uppercase;
     text-decoration: none;
 }
+
+
 
 #logo{
     background-color: rgb(253, 253, 253);
@@ -34,16 +84,8 @@ a{
 #logo > img{
     height: 8vh;
 }
-
-#carro{
-    background-color: transparent;
-    border-radius: 50%;
-}
-#carro:hover{
-    background-color: rgb(255, 255, 255);
-    animation-duration: 50%;
-    transition-duration: 1s;
-    transform:rotate(360deg)scale(1.3)
+.tachado {
+    text-decoration: line-through;
 }
 
 @keyframes desplazar {
@@ -103,14 +145,20 @@ img{
     max-width: 100%;
 }
 
+
+/* Main */
+.container-items{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+}
+
 .item{
     border-radius: 10px;
-    background-color: rgb(0, 0, 0);
 }
 
 .item:hover{
-    box-shadow: 0 10px 20px rgb(255, 255, 255);
-    
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
 }
 
 .item img{
@@ -145,16 +193,31 @@ img{
 .info-product button{
     border: none;
     background: none;
-    background-color: rgb(55, 0, 60);
+    background-color: #000;
     color: #fff;
     padding: 15px 10px;
     cursor: pointer;
 }
-.info-product button:hover{
-    background-color: rgb(150, 60, 255);
+
+
+#floating-cart {
+    position: fixed;
+    top: 0;
+    right: 0; /* Coloca el carrito flotante a la derecha */
+    width: 300px; /* Tamaño del carrito flotante */
+    height: 100%; /* O la altura que prefieras */
+    background-color: rgb(0, 0, 0); /* Color de fondo del carrito */
+    z-index: 1000; /* Asegura que el carrito esté encima del resto del contenido */
+    overflow-y: auto; /* Agrega desplazamiento vertical si el contenido es demasiado largo */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra para un aspecto flotante */
 }
 
-@media (max-width:850px){
+@media (max-width:850px) {
+    .container-items{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
     .nav{    
         background-color: rgb(55, 0, 60);
         height: 12vh;

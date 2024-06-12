@@ -1,80 +1,63 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-	<head>
+<head>
     <style>
-        body{
+        body {
             background-color: rgb(55, 0, 60);
         }
     </style>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1.0"
-		/>
-		<title>Accesorios</title>
-		<link rel="stylesheet" href="{% static 'estylecamiseta.css' %}" />
-	</head>
-	<body>
-		<header>
-			<nav>
-				<a href="{% url 'home' %}">
-					<div id = logo> 
-						<img src="{% static 'img/logopl11111.png.png' %}" alt="">
-					</div>
-				</a>
-				<a href="{% url 'home' %}">Inicio</a>
-            <a href="entradas.html">Entradas</a>
-            <a href="{% url 'camiseta' %}">Camisetas</a>
-            
-            <a href="tour.html">Tour Estadio</a>
-            <a href="{% url 'accesorio' %}">Accesorios</a>
-			<a href="{% url 'carrito' %}">Carrito({{ request.carrito_count }}) </a>
-			<div id="floating-cart" style="display: none;">
-				<div class="info-product">
-					<div class="cart">
-						<h2>Carrito de Compras</h2>
-						<ul id="cart-items"></ul>
-						<p>Total: <span id="cart-total">0</span></p>
-						<button onclick="pay()">Pagar</button>
-						<button onclick="hideFloatingCart()">Atrás</button>
-					</div>
-				</div>
-			</div>
-			<div id="cart-icon">
-				<img src="{% static 'img/icon_shop.png' %}" alt="">
-			</div>
-            </nav>
-		</header>
-        <h1>Tienda de Accesorios</h1>
-		<div class="container-items">
-			{% for acce in acc %}
-			<div class="item">
-				<figure>
-					<img
-					src="{{ acce.imagen }}"
-					alt="producto"
-				/>
-			</figure>
-			<div class="info-product">
-				<h2>{{ acce.detalle }}</h2>
-				<p class="price">Cantidad: {{ acce.stock }}</p>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accesorios</title>
+    <link rel="stylesheet" href="{% static 'estylecamiseta.css' %}" />
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{% url 'home' %}">
+                <div id="logo"> 
+                    <img src="{% static 'img/logopl11111.png.png' %}" alt="">
+                </div>
+            </a>
+            <a href="{% url 'home' %}" class="boton_1">Inicio</a>
+            <a href="entradas.html" class="boton_1">Entradas</a>
+            <a href="{% url 'camiseta' %}" class="boton_1">Camisetas</a>
+            <a href="tour.html" class="boton_1">Tour Estadio</a>
+            <a href="{% url 'accesorio' %}" class="boton_1">Accesorios</a>
+            <a href="{% url 'carrito' %}">
+                <img src="{% static 'img/icon_shop.png' %}" alt="">
+                ({{ request.carrito_count }})
+            </a>
+        </nav>
+    </header>
+    <h1>Tienda de Accesorios</h1>
+    <div class="container-items">
+        {% for acce in acc %}
+        <div class="item">
+            <figure>
+                <img src="{{ acce.imagen }}" alt="producto" class="item-img">
+            </figure>
+            <div class="info-product">
+                <h2>{{ acce.detalle }}</h2>
+                <p class="price">Cantidad: {{ acce.stock }}</p>
                 {% if acce.oferta %}
                 <p class="tachado">Antes: {{ acce.descuento10 }}</p>
                 <p class="price">${{ acce.precio }}</p>
                 {% else %}
                 <p class="price">${{ acce.precio }}</p>
                 {% endif %}
-				<button onclick="addToCart('{{ acce.detalle }}', {{ acce.precio }})">Añadir al carrito</button>
-
-					</a>
-					<a href="{% url 'addToCar' acce.codigo %}">añadir</a>
-				</div>
-			</div>
-			{% endfor %}
-			<script src="{% static 'camiseta.js' %}"></script>
-
-		</div>
-	</body>
+                <a href="{% url 'addToCar' acce.codigo %}" class="boton_1">AÑADIR AL CARRITO</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <footer class="ssa">
+        <div class="footer-content" id="footer-content">
+            <img src="{% static 'img/logopl11111.png.png' %}" alt="Logo" class="footer-logo">
+            <div>PREMIER LEAGUE SHOP</div>
+        </div>
+    </footer>
+</body>
 </html>

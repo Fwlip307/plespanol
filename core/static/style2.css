@@ -374,12 +374,35 @@ h5 {
 .slide-content .btn-1:hover {
     background-color: rgb(150, 60, 255);
 }
-.ssa{
-    display: flex;
+.ssa {
     background-color: rgb(61, 24, 93);
-    position: center;
-    padding: 6vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 12vh;
+    width: 100%;
+    color: white; /* Color del texto */
+    position: relative;
+    bottom: 0; /* Asegura que el footer esté en la parte inferior */
+    text-align: center; /* Centra el contenido */
+    flex-direction: column; /* Organiza los hijos en columna */
 }
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-logo {
+    height: 8vh;
+    margin-bottom: 10px;
+    border-radius: 50%; /* Hace que la imagen sea circular */
+    background-color: white; /* Fondo blanco */
+    padding: 5px; /* Espacio alrededor de la imagen */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra suave */
+}
+
 
 
 /* Animación para el slider */
