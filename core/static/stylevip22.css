@@ -19,7 +19,7 @@ body {
     margin: 0 auto;
 }
 .header{
-    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(pl_fondo_vip.png);
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(img/pl_fondo_vip.png);
     background-position: center bottom ;
     background-repeat: no-repeat;
     background-size: cover;
@@ -141,7 +141,7 @@ body {
     background-image: linear-gradient(
         rgba(0,0,0,0.7),
         rgba(0,0,0,0.7),
-        url(wembley4k.png));
+        url(img/wembley4k.png));
         background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -192,7 +192,7 @@ body {
     background-color: rgb(0, 0, 0);
 }
 .general-2{
-    background-image: url(tour_oldtraford.png);
+    background-image: url(img/tour_oldtraford.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -200,14 +200,14 @@ body {
 }
 
 .general-3{
-    background-image: url(emirates.png);
+    background-image: url(img/emirates.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     width: 50%;
 }
 .general-4{
-    background-image: url(brightonstadium.png);
+    background-image: url(img/brightonstadium.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
