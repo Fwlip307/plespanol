@@ -131,7 +131,9 @@
                     <div class="slide-content">
                         <img src="{% static 'img/cam_arsenal.png' %}">
                         <div class="text-overlay bottom-left">
+                            <a href="{% url 'addToCar' '0003' %}" class="btn-1">AÑADIR AL CARRITO</a>
                             <a href="{% url 'camiseta' %}" class="btn-1">Camiseta Local Arsenal 23/24</a>
+                            <p class="btn-1">${{ ca.003.precio }}</p>
                         </div>
                     </div>
                 </li>

@@ -1,60 +1,110 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
-
-* {
-    font-family: "Odibee Sans", sans-serif;
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    background-color: rgb(55, 0, 60); /* Color de fondo */
+    color: white; /* Color de texto por defecto */
+    min-height: 100vh; /* Asegura que el cuerpo ocupe al menos el 100% del viewport */
+    display: flex;
+    flex-direction: column; /* Alineación en columna */
 }
 
-body, html {
-    height: 100%;
-    background-color: rgb(55, 0, 60);
+.navbar {
+    background-color: rgb(61, 24, 93); /* Color de la barra de navegación */
+    overflow: hidden;
+    height: 110px; /* Barra de navegación más alta */
+    display: flex;
+    align-items: center;
+    justify-content: space-around; /* Distribuye los botones equitativamente */
+}
+
+.navbar a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    text-decoration: none;
+    font-size: 16px; /* Tamaño de fuente aumentado */
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.navbar a.icon {
+    display: none;
+}
+
+.container {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-grow: 1; /* Asegura que el contenedor ocupe el espacio restante */
+}
+
+.product {
+    width: 393px; /* Ancho fijo del cuadro del producto */
+    height: 560px; /* Alto fijo del cuadro del producto */
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: rgb(61, 24, 93); /* Color de fondo del producto */
+    color: white; /* Color de texto de los productos */
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Ajusta la imagen para cubrir el área del contenedor */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.product:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.product-info {
+    padding: 16px;
+    text-align: center;
+}
+
+.product-info h4 {
+    margin: 0 0 10px;
+}
+
+.product-info p {
+    margin: 0;
     color: white;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+.product-info button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: rgb(55, 0, 60); /* Color del botón */
+    color: white; /* Color del texto del botón */
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
-header, .content, footer {
+.product-info button:hover {
+    background-color: rgba(150, 60, 255, 0.9); /* Color del botón al pasar el mouse */
+}
+
+.footer {
+    background-color: rgb(61, 24, 93); /* Color de fondo del footer */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
     width: 100%;
+    flex-shrink: 0; /* Evita que el footer se reduzca */
 }
 
-.content {
-    flex: 1;
-    padding-bottom: 12vh; /* Deja espacio para el footer */
-}
-
-nav {
-    background-color: rgb(61, 24, 93);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 12vh;
-}
-
-.ssa {
-    background-color: rgb(61, 24, 93);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 12vh;
-    width: 100%;
-    color: white; /* Color del texto */
-    position: relative;
-    bottom: 0; /* Asegura que el footer esté en la parte inferior */
-    text-align: center; /* Centra el contenido */
-    flex-direction: column; /* Organiza los hijos en columna */
-}
-
-.footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
 .footer-logo {
     height: 8vh;
@@ -63,12 +113,6 @@ nav {
     background-color: white; /* Fondo blanco */
     padding: 5px; /* Espacio alrededor de la imagen */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra suave */
-}
-
-
-h1 {
-    color: white;
-    text-align: center;
 }
 
 .boton_1 {
@@ -86,167 +130,51 @@ h1 {
     background-color: rgb(150, 60, 255);
 }
 
-a {
-    color: white;
-    text-transform: uppercase;
+.boton_2 {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: rgb(55, 0, 60);
+    color: rgb(255, 255, 255);
     text-decoration: none;
+    border-radius: 5px;
 }
-
-#logo {
-    background-color: rgb(253, 253, 253);
-    border-radius: 50%;
-}
-
-#logo:hover {
+/* Estilo al pasar el cursor sobre los botones */
+.boton_2:hover {
     background-color: rgb(150, 60, 255);
-    animation-duration: 50%;
-    transition-duration: 1s;
-    transform: rotate(360deg) scale(1.3);
 }
 
-#logo > img {
-    height: 8vh;
-}
-
-.tachado {
-    text-decoration: line-through;
-}
-
-@keyframes desplazar {
-    0% {
-        transform: translateY(300px);
+@media (max-width: 768px) {
+    .navbar a:not(:first-child) {
+        display: none;
     }
-    100% {
-        transform: translateY(0px);
-    }
-}
 
-#fondoe > h1 {
-    color: aliceblue;
-    font-size: 5rem;
-    text-shadow: 2px 2px 4px black;
-    animation-name: texto;
-    animation-duration: 800ms;
-    animation-delay: 1s;
-}
+    .navbar a.icon {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
 
-@keyframes texto {
-    0% {
-        transform: scale(1px);
+    .navbar.responsive {
+        position: relative;
+        flex-direction: column;
+        align-items: flex-start;
     }
-    70% {
-        transform: scale(1.7);
+
+    .navbar.responsive a.icon {
+        position: relative;
     }
-    100% {
-        transform: scale(1);
+
+    .navbar.responsive a {
+        display: block;
+        text-align: left;
+        width: 100%;
+    }
+
+    .product {
+        width: 100%;
+        margin: 10px 0;
     }
 }
 
-/* Globales */
-*::after,
-*::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    max-width: 1200px;
-    font-family: 'Lato';
-    color: #ffffff;
-    margin: 0 auto; /* Asegura que el cuerpo esté centrado */
-}
-
-.icon-cart {
-    width: 40px;
-    height: 40px;
-    stroke: #ffffff;
-}
-
-.icon-cart:hover {
-    cursor: pointer;
-}
-
-img {
-    max-width: 100%;
-}
-
-/* Main */
-.container-items {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.item {
-    border-radius: 10px;
-}
-
-.item:hover {
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
-}
-
-.item img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 10px 10px 0 0;
-}
-
-.item figure {
-    overflow: hidden;
-}
-
-.info-product {
-    padding: 15px 30px;
-    line-height: 2;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.price {
-    font-size: 18px;
-    font-weight: 900;
-}
-
-.info-product button {
-    border: none;
-    background: none;
-    background-color: #000;
-    color: #fff;
-    padding: 15px 10px;
-    cursor: pointer;
-}
-
-#floating-cart {
-    position: fixed;
-    top: 0;
-    right: 0; /* Coloca el carrito flotante a la derecha */
-    width: 300px; /* Tamaño del carrito flotante */
-    height: 100%; /* O la altura que prefieras */
-    background-color: rgb(0, 0, 0); /* Color de fondo del carrito */
-    z-index: 1000; /* Asegura que el carrito esté encima del resto del contenido */
-    overflow-y: auto; /* Agrega desplazamiento vertical si el contenido es demasiado largo */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra para un aspecto flotante */
-}
-
-@media (max-width: 850px) {
-    .container-items {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
-    .nav {
-        background-color: rgb(55, 0, 60);
-        height: 12vh;
-    }
-    nav {
-        background-color: rgb(55, 0, 60);
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        height: 12vh;
-        font-size: 0.7rem;
-    }
-}
