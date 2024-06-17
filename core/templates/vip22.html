@@ -15,12 +15,13 @@
 
         </div>
         <div class="header-content container">
+            <img src="{% static 'img/vipp.png.png' %}" alt="">
             <h1>Zona VIP</h1>
             <p>Accede a todos los beneficios al ser  cliente VIP
 
             </p>
             <a href="#" class="btn-1">Hazte VIP</a>
-            <a href="index2.html" class="btn-1">INICIO</a>
+            <a href="{% url 'home' %}" class="btn-1">INICIO</a>
         </div>
     </header>
 
@@ -33,7 +34,7 @@
             </p>
             <div class="viip-group">
                 <div class="viip-1">
-                    <img src="cam_arsenal.png" alt="">
+                    <img src="{% static 'img/cam_arsenal.png' %}" alt="">
                     <h3>Camiseta Local Arsenal 23/24</h3>
                     <p>
                         Ahora -50% des: $34.999
@@ -54,7 +55,7 @@
 
                 </div>
                 <div class="viip-1">
-                    <img src="ca_liverpool.png" alt="">
+                    <img src="{% static 'img/ca_liverpool.png' %}" alt="">
                     <h3>Camiseta Local Liverpool 23/24</h3>
                     <p>
                         Ahora -50% des: $39.999
@@ -76,15 +77,15 @@
             <h2>Accesorios de regalo </h2>
             <div class="services-group">
                 <div class="services-1">
-                    <img src="aaa.jpg" alt="">
+                    <img src="{% static 'img/aaa.jpg' %}" alt="">
                     <h3>Balon 23/24 Free</h3>
                 </div>
                 <div class="services-1">
-                    <img src="zap_pp.png" alt="">
+                    <img src="{% static 'img/zap_pp.png' %}" alt="">
                     <h3>Zapatos Puma free</h3>
                 </div>
                 <div class="services-1">
-                    <img src="aston_bolso.png" alt="">
+                    <img src="{% static 'img/aston_bolso.png' %}" alt="">
                     <h3>Bolso Aston Villa free</h3>
                 </div>
 
@@ -105,7 +106,7 @@
             <p>
                 Tour por el maravilloso estadio del Manchester United con un 80% de descuento, ademas con 2 acompañantes gratis.
             </p>
-            <a href="tour.html" class="btn-1">Ir a tour</a>
+            <a href="{% url 'tour' %}" class="btn-1">Ir a tour</a>
         </div>
         <div class="general-2"></div>
     </section>
@@ -119,7 +120,7 @@
             <p>
                 Tour por el maravilloso estadio del Arsenal con un 60% de descuento, ademas con 3 acompañantes gratis.
             </p>
-            <a href="tour.html" class="btn-1">Ir a tour</a>
+            <a href="{% url 'tour' %}" class="btn-1">Ir a tour</a>
         </div>
         
     </section>
@@ -129,7 +130,7 @@
             <p>
                 Tour por el maravilloso estadio del Brighton con un 70% de descuento, ademas con 1 acompañante gratis.
             </p>
-            <a href="tour.html" class="btn-1">Ir a tour</a>
+            <a href="{% url 'tour' %}" class="btn-1">Ir a tour</a>
         </div>
         <div class="general-4"></div>
     </section>
@@ -141,50 +142,50 @@
         </p>
         <div class="blog-content">
             <div class="blog-1">
-                <img src="united_estadiio-logo.png" alt="">
+                <img src="{% static 'img/united_estadiio-logo.png' %}" alt=""> 
                 <h3>Manchester United</h3>
                 <p>
                     Reserva ahora con anticipacion tu entrada para los partidos del Manchester United.
                 </p>
-                <a href="entradas.html" class="btn-1">Ir a Entradas</a>
+                <a href="{% url 'ticket' %}" class="btn-1">Ir a Entradas</a>
             </div>
             <div class="blog-1">
-                <img src="city-logo-stadium.png" alt="">
+                <img src="{% static 'img/city-logo-stadium.png' %}" alt="">
                 <h3>Manchester City</h3>
                 <p>
                     Reserva ahora con anticipacion tu entrada para los partidos del Manchester City.
                 </p>
-                <a href="entradas.html" class="btn-1">Ir a Entradas</a>
+                <a href="{% url 'ticket' %}" class="btn-1">Ir a Entradas</a>
             </div>
             <div class="blog-1">
-                <img src="liverpool-logo-estadio.png" alt="">
+                <img src="{% static 'img/liverpool-logo-estadio.png' %}" alt="">
                 <h3>Liverpool</h3>
                 <p>
                     Reserva ahora con anticipacion tu entrada para los partidos del Liverpool.
                 </p>
-                <a href="entradas.html" class="btn-1">Ir a Entradas</a>
+                <a href="{% url 'ticket' %}" class="btn-1">Ir a Entradas</a>
             </div>
         </div>
     </section>
     <footer class="footer-content">
         <div class="link">
-            <a href="index2.html"><h3>Inicio</h3></a>
+            <a href="{% url 'home' %}" class="btn_1">INICIO</a>
 
         </div>
         <div class="link">
-            <a href="entradas.html"><h3>Entradas</h3></a>
+            <a href="{% url 'ticket' %}" class="btn-1">ENTRADAS</a>
 
         </div>
         <div class="link">
-            <a href="camiseta.html"><h3>Camisetas</h3></a>
+            <a href="{% url 'camiseta' %}" class="btn-1">CAMISETAS</a>
             
         </div>
         <div class="link">
-            <a href="tour.html"><h3>Tour</h3></a>
+            <a href="{% url 'tour' %}" class="btn-1">TOURS</a>
 
         </div>
         <div class="link">
-            <a href="accesorio.html"><h3>Accesorios</h3></a>
+            <a href="{% url 'accesorio' %}" class="btn-1">ACCESORIOS</a>
 
         </div>
     </footer>
