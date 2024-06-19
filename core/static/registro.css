@@ -1,4 +1,3 @@
-/* Estilos generales */
 body {
     display: flex;
     justify-content: center;
@@ -8,6 +7,9 @@ body {
     font-family: Arial, sans-serif;
     background: url('img/pl_fondo_vip.png') no-repeat center center fixed;
     background-size: cover;
+}
+*{
+    color: white;
 }
 
 .action-buttons {

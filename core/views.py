@@ -1,13 +1,14 @@
 from django.shortcuts import render, redirect
 from django.http import Http404
 from .models import *
+import requests
+from .forms import *
 
 # Create your views here.
-def home (request):
-    return render(request, 'index.html')
-
-def login (request):
-    return render(request, 'iniciar_sesion.html')
+def home(request):
+    id_es = ['0003', '0007','0004','0010']
+    cam = Camiseta.objects.filter(codigo__in=id_es)
+    return render(request, 'index.html', {'cam': cam})
 
 def tickets (request):
     tkt = Ticket.objects.all()
@@ -110,6 +111,13 @@ def delToCar(request, codigo):
     return redirect('carrito')  
 
 def carrito(request):
+    carrito = request.session.get('carrito', [])
+    total = sum(item['subtotal'] for item in carrito)
     return render(request, 'carrito.html', {
-        'carrito': request.session.get('carrito', [])
+        'carrito': carrito,
+        'total': total,
     })
+    
+def registro(request):
+    registro = Registro()
+    return render(request, 'registro.html', {'form': registro})

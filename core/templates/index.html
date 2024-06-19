@@ -23,12 +23,13 @@
             <a href="javascript:void(0);" class="btn-1" onclick="openNav()">&#9776; Menú</a>
             <a href="{% url 'camiseta' %}" class="btn-1">CAMISETAS</a>
             <a href="{% url 'accesorio' %}" class="btn-1">ACCESORIOS</a>
+            <a href="{% url 'zapatos' %}" class="btn-1">ZAPATOS</a>
             <a href="{% url 'tour' %}" class="btn-1">TOURS</a>
             <a href="{% url 'ticket' %}" class="btn-1">ENTRADAS</a>
             <a href="{% url 'carrito' %}" class="btn-1">Carrito({{ request.carrito_count }}) </a>
             <a href="{% url 'vip' %}" class="btn-1">VIP</a>
-            <a href="{% url 'login' %}" class="btn-1">LOGIN</a>
-            <a href="{% url 'zapatos' %}" class="btn-1">ZAPATOS</a>
+            <a href="{% url 'registro' %}" class="btn-1">REGISTRO</a>
+            
         </div>
     </header>
 
@@ -43,7 +44,7 @@
         <a href="{% url 'zapatos' %}" class="boton_1">ZAPATOS</a>
         <a href="{% url 'carrito' %}" class="boton_1">Carrito({{ request.carrito_count }})</a>
         <a href="{% url 'vip' %}" class="boton_1">VIP</a>
-        <a href="{% url 'login' %}" class="boton_1">LOGIN</a>
+        <a href="{% url 'registro' %}" class="boton_1">REGISTRO</a>
     </div>
     <section class="viip">
         <div class="viip-content container">
@@ -53,7 +54,7 @@
          data-key="a4453e46ed0d1ca59d11bd3f31fbbb19" 
          data-date="today" 
          data-league="39"
-         data-season="2023"
+         data-season="2024"
          data-theme=""
          data-refresh="15"
          data-show-toolbar="true"
@@ -141,45 +142,23 @@
     <div class="slider-container">
         <div class="slider">
             <ul>
+                {% for ca in cam %}
                 <li>
                     <div class="slide-content">
-                        <img src="{% static 'img/cam_arsenal.png' %}">
+                        <img src="{{ ca.imagen }}" alt="{{ ca.detalle }}">
                         <div class="text-overlay bottom-left">
-                            <a href="{% url 'addToCar' '0003' %}" class="btn-1">AÑADIR AL CARRITO</a>
-                            <a href="{% url 'camiseta' %}" class="btn-1">Camiseta Local Arsenal 23/24</a>
-                            <p class="btn-1">${{ ca.003.precio }}</p>
+                            <p>{{ ca.detalle }}</p>
+                            <a href="{% url 'addToCar' ca.codigo %}" class="btn-1">AÑADIR AL CARRITO</a>
+                            <p class="btn-1">${{ ca.precio }}</p>
+                            <a href="{% url 'camiseta' %}" class="btn-1">VER MAS</a>
                         </div>
                     </div>
                 </li>
-                <li>
-                    <div class="slide-content">
-                        <img src="{% static 'img/chelsea_cam.png' %}">
-                        <div class="text-overlay bottom-left">
-                            <a href="{% url 'camiseta' %}" class="btn-1">Camiseta Local Chelsea 23/24</a>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="slide-content">
-                        <img src="{% static 'img/cam_fulham.png' %}">
-                        <div class="text-overlay bottom-left">
-                            <a href="{% url 'camiseta' %}" class="btn-1">Camiseta Local Fulham 23/24</a>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="slide-content">
-                        <img src="{% static 'img/cam_manunited.png' %}">
-                        <div class="text-overlay bottom-left">
-                            <a href="{% url 'camiseta' %}" class="btn-1">Camiseta Local Manchester United 23/24</a>
-                        </div>
-                    </div>
-                </li>
+                {% endfor %}
             </ul>
         </div>
     </div>
-        
-
+    
     <main class="services">
         <div class="services-content container">
                 <meta charset="UTF-8">
@@ -190,7 +169,7 @@
                     data-key="a4453e46ed0d1ca59d11bd3f31fbbb19"
                     data-league="39"
                     data-team=""
-                    data-season="2023"
+                    data-season="2024"
                     data-theme=""
                     data-show-errors="false"
                     data-show-logos="true"
@@ -285,6 +264,24 @@
         function closeNav() {
             document.getElementById("mySidenav").style.width = "0";
         }
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const slider = document.querySelector('.slider ul');
+            const slides = document.querySelectorAll('.slider ul li');
+            let index = 0;
+            const intervalTime = 5000; // 5 seconds
+
+            function showNextSlide() {
+                index++;
+                if (index >= slides.length) {
+                    index = 0;
+                }
+                slider.style.transform = `translateX(-${index * 100}%)`;
+            }
+
+            setInterval(showNextSlide, intervalTime);
+        });
     </script>
 </body>
 </html>

@@ -363,55 +363,78 @@ h5 {
     margin-bottom: 15px;
 }
 
-/* Slider */
 .slider-container {
-    max-width: 700px;
-    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    max-width: 600px; /* Ajusta según tus necesidades */
+    margin: 0 auto; /* Centra el contenedor */
+    overflow: hidden;
 }
 
 .slider {
+    display: flex;
+    transition: transform 1s ease-in-out;
     width: 100%;
-    height: 900px;
-    overflow: hidden;
 }
 
 .slider ul {
     display: flex;
-    animation: cambio 20s infinite alternate linear;
-    width: 400%;
-}
-
-.slider li {
-    width: 100%;
+    padding: 0;
+    margin: 0;
     list-style: none;
+    width: 100%;
 }
 
-.slider img {
-    width: 100%;
-    height: 100%;
+.slider ul li {
+    min-width: 100%;
+    box-sizing: border-box;
+    justify-content: center; /* Centra las diapositivas horizontalmente */
 }
 
 .slide-content {
     position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s;
+    display: flex;
+    justify-content: center; /* Centra la imagen y el contenido */
 }
 
-.slide-content a {
+.slide-content img {
+    width: 100%;
+    height: auto; /* Mantiene la proporción de la imagen */
+    object-fit: cover;
+}
+
+.text-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
     color: white;
-    text-decoration-line: black;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center; /* Centra el texto */
 }
 
-/* Estilo para los botones dentro de "slide-content" */
-.slide-content .btn-1 {
-    display: inline-block;
-    padding: 11px 35px;
-    background-color: rgb(61, 24, 93);
-    color: rgb(255, 255, 255);
-    text-transform: uppercase;
+.text-overlay p,
+.text-overlay a {
+    margin: 5px 0;
 }
 
-/* Estilo al pasar el cursor sobre los botones dentro de "slide-content" */
-.slide-content .btn-1:hover {
-    background-color: rgb(150, 60, 255);
+.text-overlay a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+}
+
+.text-overlay a:hover {
+    background: rgba(255, 255, 255, 0.5);
 }
 .ssa {
     background-color: rgb(61, 24, 93);

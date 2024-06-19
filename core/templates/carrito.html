@@ -4,20 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito</title>
+    <title>Tienda en Línea</title>
     <link rel="stylesheet" href="{% static 'carrito.css' %}">
 </head>
-<header>
-    <nav>
-        <a href="{% url 'home' %}" class="btn-1">Inicio</a>
-        <a href="{% url 'ticket' %}" class="btn-1">ENTRADAS</a>
-        <a href="{% url 'camiseta' %}" class="btn-1">Camisetas</a>
-        <a href="{% url 'tour' %}" class="btn-1">TOURS</a>
-        <a href="{% url 'accesorio' %}" class="btn-1">Accesorios</a>
-        <a href="{% url 'carrito' %}"><img src="{% static 'img/icon_shop.png' %}" alt="">({{ request.carrito_count }}) </a>
-    </nav>  
-</header>
 <body>
+
+    <div class="navbar" id="navbar">
+        <a href="{% url 'home' %}" ><img src="{% static 'img/logopl11111.png.png' %}" alt="Logo" class="footer-logo"></a>
+        <a href="javascript:void(0);" class="menu-icon" onclick="openNav()">&#9776; Menú</a>
+        <a href="{% url 'home' %}" class="boton_1">INICIO</a>
+        <a href="{% url 'ticket' %}" class="boton_1">ENTRADAS</a> 
+        <a href="{% url 'camiseta' %}" class="boton_1">CAMISETAS</a>
+        <a href="{% url 'tour' %}" class="boton_1">TOURS</a>
+        <a href="{% url 'accesorio' %}" class="boton_1">ACCESORIOS</a>
+        <a href="{% url 'zapatos' %}" class="boton_1">ZAPATOS</a>
+        <a href="{% url 'carrito' %}"><img src="{% static 'img/icon_shop.png' %}" alt="">({{ request.carrito_count }}) </a>
+    </div>
+
+    <!-- Barra lateral -->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="{% url 'home' %}">Premier League Shop</a>
+        <a href="{% url 'camiseta' %}" class="btn-1">CAMISETAS</a>
+        <a href="{% url 'accesorio' %}" class="btn-1">ACCESORIOS</a>
+        <a href="{% url 'tour' %}" class="btn-1">TOURS</a>
+        <a href="{% url 'ticket' %}" class="btn-1">ENTRADAS</a>
+        <a href="{% url 'zapatos' %}" class="btn-1">ZAPATOS</a>
+        <a href="{% url 'carrito' %}" class="boton_1">Carrito({{ request.carrito_count }})</a>
+        <a href="{% url 'vip' %}" class="btn-1">VIP</a>
+        <a href="{% url 'registro' %}" class="btn-1">REGISTRO</a>
+    </div>
+
     <h1>CARRITO</h1>
     <table>
         <thead>
@@ -45,6 +62,17 @@
             {% endfor %}
         </tbody>
     </table>
-</body>
+    <h2>Total: {{ total }}</h2>
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
 
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+
+</body>
 </html>
+
