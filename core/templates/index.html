@@ -10,27 +10,41 @@
 <body>
     <header class="header">
         <nav>
-            
             <a href="{% url 'home' %}">
-                <div id = logo> 
+                <div id="logo"> 
                     <img src="{% static 'img/pre_logo.png' %}" alt="">
                 </div>
             </a>
+            
         </nav>
-        <div id="fondo">
-
-        </div>
+        <div id="fondo"></div>
         <div class="header-content container">
             <h1>Premier League Shop</h1>
+            <a href="javascript:void(0);" class="btn-1" onclick="openNav()">&#9776; Menú</a>
             <a href="{% url 'camiseta' %}" class="btn-1">CAMISETAS</a>
             <a href="{% url 'accesorio' %}" class="btn-1">ACCESORIOS</a>
             <a href="{% url 'tour' %}" class="btn-1">TOURS</a>
             <a href="{% url 'ticket' %}" class="btn-1">ENTRADAS</a>
-            <a href="{% url 'carrito' %}"class="btn-1">Carrito({{ request.carrito_count }}) </a>
+            <a href="{% url 'carrito' %}" class="btn-1">Carrito({{ request.carrito_count }}) </a>
             <a href="{% url 'vip' %}" class="btn-1">VIP</a>
-            <a href="{% url 'login' %}"class="btn-1">LOGIN</a>
+            <a href="{% url 'login' %}" class="btn-1">LOGIN</a>
+            <a href="{% url 'zapatos' %}" class="btn-1">ZAPATOS</a>
         </div>
     </header>
+
+    <!-- Barra lateral -->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="{% url 'home' %}" class="btn-1">Premier League Shop</a>
+        <a href="{% url 'camiseta' %}" class="boton_1">CAMISETAS</a>
+        <a href="{% url 'accesorio' %}" class="boton_1">ACCESORIOS</a>
+        <a href="{% url 'tour' %}" class="boton_1">TOURS</a>
+        <a href="{% url 'ticket' %}" class="boton_1">ENTRADAS</a>
+        <a href="{% url 'zapatos' %}" class="boton_1">ZAPATOS</a>
+        <a href="{% url 'carrito' %}" class="boton_1">Carrito({{ request.carrito_count }})</a>
+        <a href="{% url 'vip' %}" class="boton_1">VIP</a>
+        <a href="{% url 'login' %}" class="boton_1">LOGIN</a>
+    </div>
     <section class="viip">
         <div class="viip-content container">
             <h1>Resultados en Tiempo Real</h1>
@@ -263,5 +277,14 @@
             <div>PREMIER LEAGUE SHOP</div>
         </div>
     </footer>
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
 </body>
 </html>

@@ -15,7 +15,6 @@
 
         </div>
         <div class="header-content container">
-            <img src="{% static 'img/vipp.png.png' %}" alt="">
             <h1>Zona VIP</h1>
             <p>Accede a todos los beneficios al ser  cliente VIP
 
@@ -67,7 +66,7 @@
                 </div>
 
             </div>
-            <a href="camiseta.html" class="btn-1">Ir a Camisetas</a>
+            <a href="{% url 'camiseta' %}" class="btn-1">Ir a Camisetas</a>
 
         </div>
     </section>
@@ -93,7 +92,7 @@
             <p>
                 Obten estos accesorios de regalo, los accesorios cambian cada mes.
             </p>
-            <a href="accesorio.html" class="btn-1">Ir a Accesorios</a>
+            <a href="{% url 'accesorio' %}" class="btn-1">Ir a Accesorios</a>
 
         </div>
         
@@ -142,7 +141,7 @@
         </p>
         <div class="blog-content">
             <div class="blog-1">
-                <img src="{% static 'img/united_estadiio-logo.png' %}" alt=""> 
+                <img src="{% static 'img/united_estadiio-logo.png' %}" alt="">
                 <h3>Manchester United</h3>
                 <p>
                     Reserva ahora con anticipacion tu entrada para los partidos del Manchester United.
@@ -169,23 +168,23 @@
     </section>
     <footer class="footer-content">
         <div class="link">
-            <a href="{% url 'home' %}" class="btn_1">INICIO</a>
+            <a href="{% url 'home' %}"><h3>Inicio</h3></a>
 
         </div>
         <div class="link">
-            <a href="{% url 'ticket' %}" class="btn-1">ENTRADAS</a>
+            <a href="{% url 'ticket' %}"><h3>Entradas</h3></a>
 
         </div>
         <div class="link">
-            <a href="{% url 'camiseta' %}" class="btn-1">CAMISETAS</a>
+            <a href="{% url 'camiseta' %}"><h3>Camisetas</h3></a>
             
         </div>
         <div class="link">
-            <a href="{% url 'tour' %}" class="btn-1">TOURS</a>
+            <a href="{% url 'tour' %}"><h3>Tour</h3></a>
 
         </div>
         <div class="link">
-            <a href="{% url 'accesorio' %}" class="btn-1">ACCESORIOS</a>
+            <a href="{% url 'accesorio' %}"><h3>Accesorios</h3></a>
 
         </div>
     </footer>

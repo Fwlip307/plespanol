@@ -1,63 +1,72 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <style>
-        body {
-            background-color: rgb(55, 0, 60);
-        }
-    </style>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Accesorios</title>
-    <link rel="stylesheet" href="{% static 'styleaccesorio.css' %}" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda en Línea</title>
+    <link rel="stylesheet" href="{% static 'estylecamiseta.css' %}">
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="{% url 'home' %}">
-                <div id="logo"> 
-                    <img src="{% static 'img/logopl11111.png.png' %}" alt="">
-                </div>
-            </a>
-            <a href="{% url 'home' %}" class="boton_1">Inicio</a>
-            <a href="entradas.html" class="boton_1">Entradas</a>
-            <a href="{% url 'camiseta' %}" class="boton_1">Camisetas</a>
-            <a href="tour.html" class="boton_1">Tour Estadio</a>
-            <a href="{% url 'accesorio' %}" class="boton_1">Accesorios</a>
-            <a href="{% url 'carrito' %}">
-                <img src="{% static 'img/icon_shop.png' %}" alt="">
-                ({{ request.carrito_count }})
-            </a>
-        </nav>
-    </header>
-    <h1>Tienda de Accesorios</h1>
-    <div class="container-items">
+
+    <div class="navbar" id="navbar">
+        <a href="{% url 'home' %}" ><img src="{% static 'img/logopl11111.png.png' %}" alt="Logo" class="footer-logo"></a>
+        <a href="javascript:void(0);" class="menu-icon" onclick="openNav()">&#9776; Menú</a>
+        <a href="{% url 'home' %}" class="boton_1">INICIO</a>
+        <a href="{% url 'ticket' %}" class="boton_1">ENTRADAS</a> 
+        <a href="{% url 'camiseta' %}" class="boton_1">CAMISETAS</a>
+        <a href="{% url 'tour' %}" class="boton_1">TOURS</a>
+        <a href="{% url 'accesorio' %}" class="boton_1">ACCESORIOS</a>
+        <a href="{% url 'zapatos' %}" class="boton_1">ZAPATOS</a>
+        <a href="{% url 'carrito' %}"><img src="{% static 'img/icon_shop.png' %}" alt="">({{ request.carrito_count }}) </a>
+    </div>
+
+    <!-- Barra lateral -->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="{% url 'home' %}">Premier League Shop</a>
+        <a href="{% url 'camiseta' %}" class="btn-1">CAMISETAS</a>
+        <a href="{% url 'accesorio' %}" class="boton_1">ACCESORIOS</a>
+        <a href="{% url 'tour' %}" class="btn-1">TOURS</a>
+        <a href="{% url 'ticket' %}" class="btn-1">ENTRADAS</a>
+        <a href="{% url 'zapatos' %}" class="btn-1">ZAPATOS</a>
+        <a href="{% url 'carrito' %}" class="btn-1">Carrito({{ request.carrito_count }})</a>
+        <a href="{% url 'vip' %}" class="btn-1">VIP</a>
+        <a href="{% url 'login' %}" class="btn-1">LOGIN</a>
+    </div>
+
+    <div class="container" id="products">
         {% for acce in acc %}
-        <div class="item">
-            <figure>
-                <img src="{{ acce.imagen }}" alt="producto" class="item-img">
-            </figure>
-            <div class="info-product">
-                <h2>{{ acce.detalle }}</h2>
+        <div class="product">
+            <img src="{{ acce.imagen }}" alt="Producto 1">
+            <div class="product-info">
+                <h4>{{ acce.detalle }}</h4>
                 <p class="price">Cantidad: {{ acce.stock }}</p>
                 {% if acce.oferta %}
-                <p class="tachado">Antes: {{ acce.descuento10 }}</p>
+                <p class="tachado">Antes: {{ acce.descuento15 }}</p>
                 <p class="price">${{ acce.precio }}</p>
                 {% else %}
-                <p class="price">${{ acce.precio }}</p>
+                <p>${{ acce.precio }}</p>
                 {% endif %}
-                <a href="{% url 'addToCar' acce.codigo %}" class="boton_1">AÑADIR AL CARRITO</a>
+                <a href="{% url 'addToCar' acce.codigo %}" class="boton_2">AÑADIR AL CARRITO</a>
             </div>
         </div>
         {% endfor %}
     </div>
-    <footer class="ssa">
-        <div class="footer-content" id="footer-content">
-            <img src="{% static 'img/logopl11111.png.png' %}" alt="Logo" class="footer-logo">
-            <div>PREMIER LEAGUE SHOP</div>
-        </div>
-    </footer>
+
+    <div class="footer">
+        <img src="{% static 'img/logopl11111.png.png' %}" alt="Logo" class="footer-logo">
+        <p>© 2024 PREMIER LEAGUE SHOP.</p>
+    </div>
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+
 </body>
 </html>

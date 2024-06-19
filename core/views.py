@@ -25,6 +25,10 @@ def tours (request):
     tou = Tour.objects.all()
     return render(request,'tour.html', {'tou': tou})
 
+def zapato (request):
+    zapa = Zapatos.objects.all()
+    return render(request,'zapatos.html', {'zapa': zapa})
+
 def vips (request):
     return render(request, 'vip22.html')
 def addToCar(request, codigo):
@@ -43,7 +47,10 @@ def addToCar(request, codigo):
                 try:
                     producto = Ticket.objects.get(codigo=codigo)
                 except Ticket.DoesNotExist:
-                    raise Http404("Producto no encontrado")
+                    try:
+                        producto = Zapatos.objects.get(codigo=codigo)
+                    except Zapatos.DoesNotExist:
+                        raise Http404("Producto no encontrado")
 
     for item in carrito:
         if item["codigo"] == codigo:
@@ -79,7 +86,10 @@ def delToCar(request, codigo):
                 try:
                     producto = Ticket.objects.get(codigo=codigo)
                 except Ticket.DoesNotExist:
-                    raise Http404("Producto no encontrado")
+                    try:
+                        producto = Zapatos.objects.get(codigo=codigo)
+                    except Zapatos.DoesNotExist:
+                        raise Http404("Producto no encontrado")
 
     item_to_remove = None
 
