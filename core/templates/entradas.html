@@ -11,7 +11,7 @@
 
     <div class="navbar" id="navbar">
         <a href="{% url 'home' %}" ><img src="{% static 'img/logopl11111.png.png' %}" alt="Logo" class="footer-logo"></a>
-        <a href="javascript:void(0);" class="menu-icon" onclick="openNav()">&#9776; Menú</a>
+        <a href="javascript:void(0);" class="menu-icon" onclick="openNav()">&#9776; MENÚ</a>
         <a href="{% url 'home' %}" class="boton_1">INICIO</a>
         <a href="{% url 'ticket' %}" class="boton_1">ENTRADAS</a> 
         <a href="{% url 'camiseta' %}" class="boton_1">CAMISETAS</a>
@@ -24,13 +24,13 @@
     <!-- Barra lateral -->
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="{% url 'home' %}">Premier League Shop</a>
+        <a href="{% url 'home' %}">PREMIER LEAGUE SHOP</a>
         <a href="{% url 'camiseta' %}" class="btn-1">CAMISETAS</a>
         <a href="{% url 'accesorio' %}" class="btn-1">ACCESORIOS</a>
         <a href="{% url 'tour' %}" class="btn-1">TOURS</a>
         <a href="{% url 'ticket' %}" class="boton_1">ENTRADAS</a>
         <a href="{% url 'zapatos' %}" class="btn-1">ZAPATOS</a>
-        <a href="{% url 'carrito' %}" class="btn-1">Carrito({{ request.carrito_count }})</a>
+        <a href="{% url 'carrito' %}" class="btn-1">CARRITO({{ request.carrito_count }})</a>
         <a href="{% url 'vip' %}" class="btn-1">VIP</a>
         <a href="{% url 'registro' %}" class="btn-1">REGISTRO</a>
     </div>
